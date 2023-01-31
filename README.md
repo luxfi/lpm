@@ -1,13 +1,13 @@
-# Avalanche Plugin Manager (apm)
+# Lux Plugin Manager (lpm)
 
 **Note: This code is currently in Alpha. Proceed at your own risk.**
 
-`apm` is a command-line tool to manage virtual machines binaries for
-[avalanchego](https://github.com/ava-labs/avalanchego).
+`lpm` is a command-line tool to manage virtual machines binaries for
+[node](https://github.com/luxdefi/node).
 
-`apm` allows users to build their own custom repositories to provide virtual machine and subnet definitions outside of
-the [avalanche-plugins-core](https://github.com/ava-labs/avalanche-plugins-core) repository. `avalanche-plugins-core`
-is a community-sourced set of plugins and subnets that ships with the `apm`, but users have the option of adding their own using
+`lpm` allows users to build their own custom repositories to provide virtual machine and subnet definitions outside of
+the [lux-plugins-core](https://github.com/luxdefi/lux-plugins-core) repository. `lux-plugins-core`
+is a community-sourced set of plugins and subnets that ships with the `lpm`, but users have the option of adding their own using
 the `add-repository` command.
 
 ## Installation
@@ -18,7 +18,7 @@ the `add-repository` command.
 To download a binary for the latest release, run:
 
 ```
-curl -sSfL https://raw.githubusercontent.com/ava-labs/apm/master/scripts/install.sh | sh -s
+curl -sSfL https://raw.githubusercontent.com/luxdefi/lpm/master/scripts/install.sh | sh -s
 ```
 
 The binary will be installed inside the `./bin` directory (relative to where the install command was run).
@@ -39,7 +39,7 @@ To add it to your path permanently, add an export command to your shell initiali
 To download the binary into a specific directory, run:
 
 ```
-curl -sSfL https://raw.githubusercontent.com/ava-labs/apm/master/scripts/install.sh | sh -s -- -b <relative directory>
+curl -sSfL https://raw.githubusercontent.com/luxdefi/lpm/master/scripts/install.sh | sh -s -- -b <relative directory>
 ```
 
 ### Source
@@ -49,7 +49,7 @@ To build from source, you can use the provided build script from the repository 
 ```
 ./scripts/build.sh
 ```
-The resulting `apm` binary will be available in `./build/apm`.
+The resulting `lpm` binary will be available in `./build/lpm`.
 
 ## Commands
 
@@ -57,24 +57,24 @@ The resulting `apm` binary will be available in `./build/apm`.
 Starts tracking a plugin repository.
 
 ```shell
-apm add-repository --alias ava-labs/core --url https://github.com/ava-labs/avalanche-plugins-core.git --branch master
+lpm add-repository --alias luxdefi/core --url https://github.com/luxdefi/lux-plugins-core.git --branch master
 ```
 
 #### Parameters:
 - `--alias`: The alias of the repository to track (must be in the form of `foo/bar` i.e organization/repository).
 - `--url`: The url to the repository.
 - `--branch`: The branch name to track.
- 
+
 ### install-vm
-Installs a virtual machine by its alias. Either a partial alias (e.g `spacesvm`) or a fully qualified name including the repository (e.g `ava-labs/core:spacesvm`) to disambiguate between multiple repositories can be used.
+Installs a virtual machine by its alias. Either a partial alias (e.g `spacesvm`) or a fully qualified name including the repository (e.g `luxdefi/core:spacesvm`) to disambiguate between multiple repositories can be used.
 
 If multiple matches are found (e.g `repository-1/foovm`, `repository-2/foovm`), you will be required to specify the
 fully qualified name of the virtual machine to disambiguate the repository to install from.
 
-This will install the virtual machine binary to your `avalanchego` plugin path.
+This will install the virtual machine binary to your `node` plugin path.
 
 ```shell
-apm install-vm --vm spacesvm
+lpm install-vm --vm spacesvm
 ```
 
 #### Parameters:
@@ -82,7 +82,7 @@ apm install-vm --vm spacesvm
 
 
 ### join-subnet
-Joins a subnet by its alias. Either a partial alias (e.g `spaces`) or a fully qualified name including the repository (e.g `ava-labs/core:spaces`) to disambiguate between multiple repositories can be used.
+Joins a subnet by its alias. Either a partial alias (e.g `spaces`) or a fully qualified name including the repository (e.g `luxdefi/core:spaces`) to disambiguate between multiple repositories can be used.
 
 This will install dependencies for the subnet by calling `install-vm` on each virtual machine required by the subnet.
 
@@ -91,7 +91,7 @@ fully qualified name of the subnet definition to disambiguate the repository to 
 
 
 ```shell
-apm join-subnet --subnet spaces
+lpm join-subnet --subnet spaces
 ```
 
 #### Parameters:
@@ -101,7 +101,7 @@ apm join-subnet --subnet spaces
 Lists all tracked repositories.
 
 ```shell
-apm list-repositories
+lpm list-repositories
 ```
 
 ### uninstall-vm
@@ -110,10 +110,10 @@ Installs a virtual machine by its alias.
 If multiple matches are found (e.g `repository-1/foovm`, `repository-2/foovm`), you will be required to specify the
 fully qualified name of the virtual machine to disambiguate the repository to install from.
 
-This will remove the virtual machine binary from your `avalanchego` plugin path.
+This will remove the virtual machine binary from your `node` plugin path.
 
 ```shell
-apm uninstall-vm --vm spacesvm
+lpm uninstall-vm --vm spacesvm
 ```
 
 #### Parameters:
@@ -125,18 +125,18 @@ Fetches the latest plugin definitions from all tracked repositories.
 
 
 ```shell
-apm list-repositories
+lpm list-repositories
 ```
 
 ### upgrade
 
 Upgrades a virtual machine binary. If one is not provided, this will upgrade all virtual machine binaries in your
-`avalanchego` plugin path with the latest synced definitions.
+`node` plugin path with the latest synced definitions.
 
-For a virtual machine to be upgraded, it must have been installed using the `apm`.
+For a virtual machine to be upgraded, it must have been installed using the `lpm`.
 
 ```shell
-apm upgrade
+lpm upgrade
 ```
 
 #### Parameters
@@ -146,7 +146,7 @@ apm upgrade
 Stops tracking a repository and wipes all local definitions from that repository.
 
 ```shell
-apm remove-repository --alias organization/repository
+lpm remove-repository --alias organization/repository
 ```
 
 #### Parameters:
@@ -157,27 +157,27 @@ apm remove-repository --alias organization/repository
 ###
 1. Install the spaces subnet!
 ```shell
-./build/apm join-subnet --subnet spaces
+./build/lpm join-subnet --subnet spaces
 ```
 
 2. You'll see some output like this:
 ```text
-$ ./build/apm join-subnet --subnet spaces
+$ ./build/lpm join-subnet --subnet spaces
 
 Installing virtual machines for subnet Ai42MkKqk8yjXFCpoHXw7rdTWSHiKEMqh5h8gbxwjgkCUfkrk.
-Downloading https://github.com/ava-labs/spacesvm/archive/refs/tags/v0.0.3.tar.gz...
+Downloading https://github.com/luxdefi/spacesvm/archive/refs/tags/v0.0.3.tar.gz...
 HTTP response 200 OK
 Calculating checksums...
 Saw expected checksum value of 1ac250f6c40472f22eaf0616fc8c886078a4eaa9b2b85fbb4fb7783a1db6af3f
 Creating sources directory...
-Unpacking ava-labs/avalanche-plugins-core:spacesvm...
+Unpacking luxdefi/lux-plugins-core:spacesvm...
 Running install script at scripts/build.sh...
 Building spacesvm in ./build/sqja3uK17MJxfC7AN8nGadBw9JK5BcrsNwNynsqP5Gih8M5Bm
 Building spaces-cli in ./build/spaces-cli
 Moving binary sqja3uK17MJxfC7AN8nGadBw9JK5BcrsNwNynsqP5Gih8M5Bm into plugin directory...
 Cleaning up temporary files...
 Adding virtual machine sqja3uK17MJxfC7AN8nGadBw9JK5BcrsNwNynsqP5Gih8M5Bm to installation registry...
-Successfully installed ava-labs/avalanche-plugins-core:spacesvm@v0.0.4 in /Users/joshua.kim/go/src/github.com/ava-labs/avalanchego/build/plugins/sqja3uK17MJxfC7AN8nGadBw9JK5BcrsNwNynsqP5Gih8M5Bm
+Successfully installed luxdefi/lux-plugins-core:spacesvm@v0.0.4 in /Users/joshua.kim/go/src/github.com/luxdefi/node/build/plugins/sqja3uK17MJxfC7AN8nGadBw9JK5BcrsNwNynsqP5Gih8M5Bm
 Updating virtual machines...
 Node at 127.0.0.1:9650/ext/admin was offline. Virtual machines will be available upon node startup.
 Whitelisting subnet Ai42MkKqk8yjXFCpoHXw7rdTWSHiKEMqh5h8gbxwjgkCUfkrk...
@@ -185,7 +185,7 @@ Finished installing virtual machines for subnet Ai42MkKqk8yjXFCpoHXw7rdTWSHiKEMq
 ```
 
 ### Setting up Credentials for a Private Plugin Repository
-You'll need to specify the `--credentials-file` flag which contains your github personal access token. 
+You'll need to specify the `--credentials-file` flag which contains your github personal access token.
 
 Example token file:
 ```
@@ -195,5 +195,5 @@ password: <personal access token here>
 
 Example command to download a subnet's VMs from a private repository:
 ```
-apm join-subnet --subnet=foobar --credentials-file=/home/joshua-kim/token
+lpm join-subnet --subnet=foobar --credentials-file=/home/joshua-kim/token
 ```
