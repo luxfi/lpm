@@ -1,4 +1,4 @@
-// Copyright (C) 2019-2021, Ava Labs, Inc. All rights reserved.
+// Copyright (C) 2019-2021, Lux Partners Limited. All rights reserved.
 // See the file LICENSE for licensing terms.
 
 package workflow
@@ -8,8 +8,8 @@ import (
 
 	"github.com/spf13/afero"
 
-	"github.com/ava-labs/apm/git"
-	"github.com/ava-labs/apm/state"
+	"github.com/luxdefi/apm/git"
+	"github.com/luxdefi/apm/state"
 )
 
 type UpgradeConfig struct {
