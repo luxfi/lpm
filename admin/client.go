@@ -1,4 +1,4 @@
-// Copyright (C) 2019-2021, Ava Labs, Inc. All rights reserved.
+// Copyright (C) 2019-2021, Lux Partners Limited. All rights reserved.
 // See the file LICENSE for licensing terms.
 
 package admin
@@ -6,7 +6,7 @@ package admin
 import (
 	"context"
 
-	adminapi "github.com/ava-labs/avalanchego/api/admin"
+	adminapi "github.com/luxdefi/node/api/admin"
 )
 
 var _ Client = &client{}

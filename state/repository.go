@@ -1,4 +1,4 @@
-// Copyright (C) 2019-2021, Ava Labs, Inc. All rights reserved.
+// Copyright (C) 2019-2021, Lux Partners Limited. All rights reserved.
 // See the file LICENSE for licensing terms.
 
 package state
@@ -10,8 +10,8 @@ import (
 
 	"gopkg.in/yaml.v3"
 
-	"github.com/ava-labs/apm/git"
-	"github.com/ava-labs/apm/types"
+	"github.com/luxdefi/apm/git"
+	"github.com/luxdefi/apm/types"
 )
 
 var (

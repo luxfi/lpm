@@ -1,4 +1,4 @@
-// Copyright (C) 2019-2021, Ava Labs, Inc. All rights reserved.
+// Copyright (C) 2019-2021, Lux Partners Limited. All rights reserved.
 // See the file LICENSE for licensing terms.
 
 package workflow
@@ -8,15 +8,15 @@ import (
 	"path/filepath"
 	"testing"
 
-	"github.com/ava-labs/avalanchego/utils/perms"
+	"github.com/luxdefi/node/utils/perms"
 	"github.com/golang/mock/gomock"
 	"github.com/spf13/afero"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/ava-labs/apm/checksum"
-	"github.com/ava-labs/apm/state"
-	"github.com/ava-labs/apm/types"
+	"github.com/luxdefi/apm/checksum"
+	"github.com/luxdefi/apm/state"
+	"github.com/luxdefi/apm/types"
 )
 
 func TestInstallExecute(t *testing.T) {

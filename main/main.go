@@ -1,4 +1,4 @@
-// Copyright (C) 2019-2021, Ava Labs, Inc. All rights reserved.
+// Copyright (C) 2019-2021, Lux Partners Limited. All rights reserved.
 // See the file LICENSE for licensing terms.
 
 package main
@@ -9,7 +9,7 @@ import (
 
 	"github.com/spf13/afero"
 
-	"github.com/ava-labs/apm/cmd"
+	"github.com/luxdefi/apm/cmd"
 )
 
 func main() {

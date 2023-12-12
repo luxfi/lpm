@@ -1,9 +1,9 @@
-module github.com/ava-labs/apm
+module github.com/luxdefi/apm
 
 go 1.18
 
 require (
-	github.com/ava-labs/avalanchego v1.7.14
+	github.com/luxdefi/node v1.7.14
 	github.com/cavaliergopher/grab/v3 v3.0.1
 	github.com/go-git/go-git/v5 v5.4.2
 	github.com/golang/mock v1.6.0

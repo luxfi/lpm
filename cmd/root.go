@@ -1,4 +1,4 @@
-// Copyright (C) 2019-2021, Ava Labs, Inc. All rights reserved.
+// Copyright (C) 2019-2021, Lux Partners Limited. All rights reserved.
 // See the file LICENSE for licensing terms.
 
 package cmd
@@ -8,16 +8,16 @@ import (
 	"os"
 	"path/filepath"
 
-	"github.com/ava-labs/avalanchego/utils/wrappers"
+	"github.com/luxdefi/node/utils/wrappers"
 	"github.com/go-git/go-git/v5/plumbing/transport/http"
 	"github.com/spf13/afero"
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
 	"gopkg.in/yaml.v3"
 
-	"github.com/ava-labs/apm/apm"
-	"github.com/ava-labs/apm/config"
-	"github.com/ava-labs/apm/constant"
+	"github.com/luxdefi/apm/apm"
+	"github.com/luxdefi/apm/config"
+	"github.com/luxdefi/apm/constant"
 )
 
 var (
@@ -48,9 +48,9 @@ func New(fs afero.Fs) (*cobra.Command, error) {
 
 	rootCmd.PersistentFlags().String(configFileKey, "", "path to configuration file for the apm")
 	rootCmd.PersistentFlags().String(apmPathKey, apmDir, "path to the directory apm creates its artifacts")
-	rootCmd.PersistentFlags().String(pluginPathKey, filepath.Join(goPath, "src", "github.com", "ava-labs", "avalanchego", "build", "plugins"), "path to avalanche plugin directory")
+	rootCmd.PersistentFlags().String(pluginPathKey, filepath.Join(goPath, "src", "github.com", "luxdefi", "node", "build", "plugins"), "path to lux plugin directory")
 	rootCmd.PersistentFlags().String(credentialsFileKey, "", "path to credentials file")
-	rootCmd.PersistentFlags().String(adminAPIEndpointKey, "127.0.0.1:9650/ext/admin", "endpoint for the avalanche admin api")
+	rootCmd.PersistentFlags().String(adminAPIEndpointKey, "127.0.0.1:9650/ext/admin", "endpoint for the lux admin api")
 
 	errs := wrappers.Errs{}
 	errs.Add(

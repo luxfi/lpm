@@ -1,4 +1,4 @@
-// Copyright (C) 2019-2021, Ava Labs, Inc. All rights reserved.
+// Copyright (C) 2019-2021, Lux Partners Limited. All rights reserved.
 // See the file LICENSE for licensing terms.
 
 package workflow
@@ -10,11 +10,11 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/ava-labs/avalanchego/utils/perms"
+	"github.com/luxdefi/node/utils/perms"
 	"github.com/spf13/afero"
 
-	"github.com/ava-labs/apm/checksum"
-	"github.com/ava-labs/apm/state"
+	"github.com/luxdefi/apm/checksum"
+	"github.com/luxdefi/apm/state"
 )
 
 var _ Workflow = &Install{}

@@ -1,4 +1,4 @@
-// Copyright (C) 2019-2021, Ava Labs, Inc. All rights reserved.
+// Copyright (C) 2019-2021, Lux Partners Limited. All rights reserved.
 // See the file LICENSE for licensing terms.
 
 package util
@@ -6,7 +6,7 @@ package util
 import (
 	"strings"
 
-	"github.com/ava-labs/apm/constant"
+	"github.com/luxdefi/apm/constant"
 )
 
 func ParseQualifiedName(name string) (source string, plugin string) {
