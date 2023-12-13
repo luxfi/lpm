@@ -23,12 +23,12 @@ func removeRepository(fs afero.Fs) *cobra.Command {
 	}
 
 	command.RunE = func(_ *cobra.Command, _ []string) error {
-		apm, err := initAPM(fs)
+		lpm, err := initLPM(fs)
 		if err != nil {
 			return err
 		}
 
-		return apm.RemoveRepository(alias)
+		return lpm.RemoveRepository(alias)
 	}
 
 	return command

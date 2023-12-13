@@ -15,8 +15,8 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/luxdefi/apm/git"
-	"github.com/luxdefi/apm/state"
+	"github.com/luxdefi/lpm/git"
+	"github.com/luxdefi/lpm/state"
 )
 
 func TestUpdateExecute(t *testing.T) {

@@ -11,7 +11,7 @@ import (
 
 	"github.com/spf13/afero"
 
-	"github.com/luxdefi/apm/state"
+	"github.com/luxdefi/lpm/state"
 )
 
 var _ Workflow = &Uninstall{}

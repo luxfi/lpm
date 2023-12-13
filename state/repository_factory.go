@@ -7,7 +7,7 @@ import (
 	"os"
 	"path/filepath"
 
-	"github.com/luxdefi/apm/git"
+	"github.com/luxdefi/lpm/git"
 )
 
 var _ RepositoryFactory = repositoryFactory{}

@@ -3,9 +3,9 @@
 
 # ref. https://goreleaser.com/customization/build/
 builds:
-  - id: apm
+  - id: lpm
     main: ./main/main.go
-    binary: apm
+    binary: lpm
     flags:
       - -v
     # windows is ignored by default, as the `goos` field by default only
@@ -21,4 +21,4 @@ release:
   # Default is extracted from the origin remote URL or empty if its private hosted.
   github:
     owner: luxdefi
-    name: apm
+    name: lpm

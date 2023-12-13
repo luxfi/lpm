@@ -15,20 +15,20 @@ import (
 	"github.com/spf13/viper"
 	"gopkg.in/yaml.v3"
 
-	"github.com/luxdefi/apm/apm"
-	"github.com/luxdefi/apm/config"
-	"github.com/luxdefi/apm/constant"
+	"github.com/luxdefi/lpm/lpm"
+	"github.com/luxdefi/lpm/config"
+	"github.com/luxdefi/lpm/constant"
 )
 
 var (
 	goPath  = os.ExpandEnv("$GOPATH")
 	homeDir = os.ExpandEnv("$HOME")
-	apmDir  = filepath.Join(homeDir, fmt.Sprintf(".%s", constant.AppName))
+	lpmDir  = filepath.Join(homeDir, fmt.Sprintf(".%s", constant.AppName))
 )
 
 const (
 	configFileKey       = "config-file"
-	apmPathKey          = "apm-path"
+	lpmPathKey          = "lpm-path"
 	pluginPathKey       = "plugin-path"
 	credentialsFileKey  = "credentials-file"
 	adminAPIEndpointKey = "admin-api-endpoint"
@@ -36,8 +36,8 @@ const (
 
 func New(fs afero.Fs) (*cobra.Command, error) {
 	rootCmd := &cobra.Command{
-		Use:   "apm",
-		Short: "apm is a plugin manager to help manage virtual machines and subnets",
+		Use:   "lpm",
+		Short: "lpm is a plugin manager to help manage virtual machines and subnets",
 		PersistentPreRunE: func(cmd *cobra.Command, args []string) error {
 			// we need to initialize our config here before each command starts,
 			// since Cobra doesn't actually parse any of the flags until
@@ -46,8 +46,8 @@ func New(fs afero.Fs) (*cobra.Command, error) {
 		},
 	}
 
-	rootCmd.PersistentFlags().String(configFileKey, "", "path to configuration file for the apm")
-	rootCmd.PersistentFlags().String(apmPathKey, apmDir, "path to the directory apm creates its artifacts")
+	rootCmd.PersistentFlags().String(configFileKey, "", "path to configuration file for the lpm")
+	rootCmd.PersistentFlags().String(lpmPathKey, lpmDir, "path to the directory lpm creates its artifacts")
 	rootCmd.PersistentFlags().String(pluginPathKey, filepath.Join(goPath, "src", "github.com", "luxdefi", "node", "build", "plugins"), "path to lux plugin directory")
 	rootCmd.PersistentFlags().String(credentialsFileKey, "", "path to credentials file")
 	rootCmd.PersistentFlags().String(adminAPIEndpointKey, "127.0.0.1:9650/ext/admin", "endpoint for the lux admin api")
@@ -55,7 +55,7 @@ func New(fs afero.Fs) (*cobra.Command, error) {
 	errs := wrappers.Errs{}
 	errs.Add(
 		viper.BindPFlag(configFileKey, rootCmd.PersistentFlags().Lookup(configFileKey)),
-		viper.BindPFlag(apmPathKey, rootCmd.PersistentFlags().Lookup(apmPathKey)),
+		viper.BindPFlag(lpmPathKey, rootCmd.PersistentFlags().Lookup(lpmPathKey)),
 		viper.BindPFlag(pluginPathKey, rootCmd.PersistentFlags().Lookup(pluginPathKey)),
 		viper.BindPFlag(credentialsFileKey, rootCmd.PersistentFlags().Lookup(credentialsFileKey)),
 		viper.BindPFlag(adminAPIEndpointKey, rootCmd.PersistentFlags().Lookup(adminAPIEndpointKey)),
@@ -113,14 +113,14 @@ func initCredentials() (http.BasicAuth, error) {
 	return result, nil
 }
 
-func initAPM(fs afero.Fs) (*apm.APM, error) {
+func initLPM(fs afero.Fs) (*lpm.LPM, error) {
 	credentials, err := initCredentials()
 	if err != nil {
 		return nil, err
 	}
 
-	return apm.New(apm.Config{
-		Directory:        viper.GetString(apmPathKey),
+	return lpm.New(lpm.Config{
+		Directory:        viper.GetString(lpmPathKey),
 		Auth:             credentials,
 		AdminAPIEndpoint: viper.GetString(adminAPIEndpointKey),
 		PluginDir:        viper.GetString(pluginPathKey),

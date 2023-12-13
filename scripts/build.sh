@@ -13,10 +13,10 @@ if ! [[ "$0" =~ scripts/build.sh ]]; then
 fi
 
 # Set default binary directory location
-name="apm"
+name="lpm"
 
-# Build the apm
+# Build the lpm
 mkdir -p ./build
 
-echo "Building apm in ./build/$name"
+echo "Building lpm in ./build/$name"
 go build -o ./build/$name ./main

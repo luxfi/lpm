@@ -6,7 +6,7 @@ package state
 import (
 	"github.com/go-git/go-git/v5/plumbing"
 
-	"github.com/luxdefi/apm/types"
+	"github.com/luxdefi/lpm/types"
 )
 
 // SourceInfo represents a repository, its source, and the last synced commit.

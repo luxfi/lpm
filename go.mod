@@ -1,4 +1,4 @@
-module github.com/luxdefi/apm
+module github.com/luxdefi/lpm
 
 go 1.18
 

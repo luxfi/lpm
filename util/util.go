@@ -6,7 +6,7 @@ package util
 import (
 	"strings"
 
-	"github.com/luxdefi/apm/constant"
+	"github.com/luxdefi/lpm/constant"
 )
 
 func ParseQualifiedName(name string) (source string, plugin string) {

@@ -13,7 +13,7 @@ import (
 )
 
 const (
-	stateFile = "apm.state"
+	stateFile = "lpm.state"
 )
 
 func newEmpty(path string) File {
@@ -42,7 +42,7 @@ func New(path string) (File, error) {
 	return result, nil
 }
 
-// File is the representation of the current APM state.
+// File is the representation of the current LPM state.
 // Not safe for concurrent use.
 type File struct {
 	// Mapping of each tracked repository's alias to its metadata
