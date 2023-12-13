@@ -13,8 +13,8 @@ import (
 	"github.com/luxdefi/node/utils/perms"
 	"github.com/spf13/afero"
 
-	"github.com/luxdefi/apm/checksum"
-	"github.com/luxdefi/apm/state"
+	"github.com/luxdefi/lpm/checksum"
+	"github.com/luxdefi/lpm/state"
 )
 
 var _ Workflow = &Install{}

@@ -11,7 +11,7 @@ package state
 import (
 	reflect "reflect"
 
-	types "github.com/luxdefi/apm/types"
+	types "github.com/luxdefi/lpm/types"
 	gomock "github.com/golang/mock/gomock"
 )
 

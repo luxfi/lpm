@@ -7,13 +7,13 @@ set -e
 usage() {
   this=$1
   cat <<EOF
-$this: download go binaries for luxdefi/apm
+$this: download go binaries for luxdefi/lpm
 
 Usage: $this [-b] bindir [-d] [tag]
   -b sets bindir or installation directory, Defaults to ./bin
   -d turns on debug logging
    [tag] is a tag from
-   https://github.com/luxdefi/apm/releases
+   https://github.com/luxdefi/lpm/releases
    If tag is missing, then the latest will be used.
 
 EOF
@@ -60,10 +60,10 @@ execute() {
 }
 get_binaries() {
   case "$PLATFORM" in
-    darwin/amd64) BINARIES="apm" ;;
-    darwin/arm64) BINARIES="apm" ;;
-    linux/amd64) BINARIES="apm" ;;
-    linux/arm64) BINARIES="apm" ;;
+    darwin/amd64) BINARIES="lpm" ;;
+    darwin/arm64) BINARIES="lpm" ;;
+    linux/amd64) BINARIES="lpm" ;;
+    linux/arm64) BINARIES="lpm" ;;
     *)
       log_crit "platform $PLATFORM is not supported.  Make sure this script is up-to-date and file request at https://github.com/${PREFIX}/issues/new"
       exit 1
@@ -332,10 +332,10 @@ End of functions from https://github.com/client9/shlib
 ------------------------------------------------------------------------
 EOF
 
-PROJECT_NAME=apm
+PROJECT_NAME=lpm
 OWNER=luxdefi
-REPO="apm"
-BINARY=apm
+REPO="lpm"
+BINARY=lpm
 FORMAT=tar.gz
 OS=$(uname_os)
 ARCH=$(uname_arch)

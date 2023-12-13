@@ -14,12 +14,12 @@ func update(fs afero.Fs) *cobra.Command {
 		Short: "Updates plugin definitions for all tracked repositories.",
 	}
 	command.RunE = func(_ *cobra.Command, _ []string) error {
-		apm, err := initAPM(fs)
+		lpm, err := initLPM(fs)
 		if err != nil {
 			return err
 		}
 
-		return apm.Update()
+		return lpm.Update()
 	}
 
 	return command

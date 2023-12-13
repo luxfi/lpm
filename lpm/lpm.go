@@ -1,7 +1,7 @@
 // Copyright (C) 2019-2021, Lux Partners Limited. All rights reserved.
 // See the file LICENSE for licensing terms.
 
-package apm
+package lpm
 
 import (
 	"errors"
@@ -18,20 +18,20 @@ import (
 	"github.com/juju/fslock"
 	"github.com/spf13/afero"
 
-	"github.com/luxdefi/apm/admin"
-	"github.com/luxdefi/apm/constant"
-	"github.com/luxdefi/apm/engine"
-	"github.com/luxdefi/apm/git"
-	"github.com/luxdefi/apm/state"
-	"github.com/luxdefi/apm/url"
-	"github.com/luxdefi/apm/util"
-	"github.com/luxdefi/apm/workflow"
+	"github.com/luxdefi/lpm/admin"
+	"github.com/luxdefi/lpm/constant"
+	"github.com/luxdefi/lpm/engine"
+	"github.com/luxdefi/lpm/git"
+	"github.com/luxdefi/lpm/state"
+	"github.com/luxdefi/lpm/url"
+	"github.com/luxdefi/lpm/util"
+	"github.com/luxdefi/lpm/workflow"
 )
 
 const (
 	repositoryDir = "repositories"
 	tmpDir        = "tmp"
-	lockFile      = "apm.lock"
+	lockFile      = "lpm.lock"
 )
 
 type Config struct {
@@ -43,7 +43,7 @@ type Config struct {
 	StateFile        state.File
 }
 
-type APM struct {
+type LPM struct {
 	repoFactory state.RepositoryFactory
 	git         git.Factory
 
@@ -63,7 +63,7 @@ type APM struct {
 	lock             *fslock.Lock
 }
 
-func New(config Config) (*APM, error) {
+func New(config Config) (*LPM, error) {
 	if err := os.MkdirAll(config.Directory, perms.ReadWriteExecute); err != nil {
 		return nil, err
 	}
@@ -73,7 +73,7 @@ func New(config Config) (*APM, error) {
 	}
 
 	repositoriesPath := filepath.Join(config.Directory, repositoryDir)
-	a := &APM{
+	a := &LPM{
 		repoFactory: state.NewRepositoryFactory(repositoriesPath),
 		git:         git.RepositoryFactory{},
 		executor:    engine.NewWorkflowEngine(stateFile),
@@ -120,7 +120,7 @@ func New(config Config) (*APM, error) {
 	return a, nil
 }
 
-func (a *APM) parseAndRun(
+func (a *LPM) parseAndRun(
 	alias string,
 	command func(string) error,
 ) error {
@@ -136,11 +136,11 @@ func (a *APM) parseAndRun(
 	return command(fullName)
 }
 
-func (a *APM) Install(alias string) error {
+func (a *LPM) Install(alias string) error {
 	return a.parseAndRun(alias, a.install)
 }
 
-func (a *APM) install(name string) error {
+func (a *LPM) install(name string) error {
 	if err := a.lock.TryLock(); err != nil {
 		return err
 	}
@@ -178,11 +178,11 @@ func (a *APM) install(name string) error {
 	return a.executor.Execute(workflow)
 }
 
-func (a *APM) Uninstall(alias string) error {
+func (a *LPM) Uninstall(alias string) error {
 	return a.parseAndRun(alias, a.uninstall)
 }
 
-func (a *APM) uninstall(name string) error {
+func (a *LPM) uninstall(name string) error {
 	if err := a.lock.TryLock(); err != nil {
 		return err
 	}
@@ -205,11 +205,11 @@ func (a *APM) uninstall(name string) error {
 	return a.executor.Execute(wf)
 }
 
-func (a *APM) JoinSubnet(alias string) error {
+func (a *LPM) JoinSubnet(alias string) error {
 	return a.parseAndRun(alias, a.joinSubnet)
 }
 
-func (a *APM) joinSubnet(fullName string) error {
+func (a *LPM) joinSubnet(fullName string) error {
 	alias, plugin := util.ParseQualifiedName(fullName)
 	repo, err := a.repoFactory.GetRepository(alias)
 	if err != nil {
@@ -250,7 +250,7 @@ func (a *APM) joinSubnet(fullName string) error {
 	return nil
 }
 
-func (a *APM) Info(alias string) error {
+func (a *LPM) Info(alias string) error {
 	if qualifiedName(alias) {
 		return a.install(alias)
 	}
@@ -263,11 +263,11 @@ func (a *APM) Info(alias string) error {
 	return a.info(fullName)
 }
 
-func (a *APM) info(_ string) error {
+func (a *LPM) info(_ string) error {
 	return nil
 }
 
-func (a *APM) Update() error {
+func (a *LPM) Update() error {
 	if err := a.lock.TryLock(); err != nil {
 		return err
 	}
@@ -295,7 +295,7 @@ func (a *APM) Update() error {
 	return nil
 }
 
-func (a *APM) Upgrade(alias string) error {
+func (a *LPM) Upgrade(alias string) error {
 	if err := a.lock.TryLock(); err != nil {
 		return err
 	}
@@ -323,7 +323,7 @@ func (a *APM) Upgrade(alias string) error {
 	return a.executor.Execute(wf)
 }
 
-func (a *APM) upgradeVM(name string) error {
+func (a *LPM) upgradeVM(name string) error {
 	return a.executor.Execute(workflow.NewUpgradeVM(
 		workflow.UpgradeVMConfig{
 			Executor:    a.executor,
@@ -339,7 +339,7 @@ func (a *APM) upgradeVM(name string) error {
 	))
 }
 
-func (a *APM) AddRepository(alias string, url string, branch string) error {
+func (a *LPM) AddRepository(alias string, url string, branch string) error {
 	if err := a.lock.TryLock(); err != nil {
 		return err
 	}
@@ -363,7 +363,7 @@ func (a *APM) AddRepository(alias string, url string, branch string) error {
 	return a.executor.Execute(wf)
 }
 
-func (a *APM) RemoveRepository(alias string) error {
+func (a *LPM) RemoveRepository(alias string) error {
 	if err := a.lock.TryLock(); err != nil {
 		return err
 	}
@@ -380,7 +380,7 @@ func (a *APM) RemoveRepository(alias string) error {
 	))
 }
 
-func (a *APM) ListRepositories() error {
+func (a *LPM) ListRepositories() error {
 	if err := a.lock.TryLock(); err != nil {
 		return err
 	}
@@ -402,7 +402,7 @@ func qualifiedName(name string) bool {
 	return len(parsed) > 1
 }
 
-func (a *APM) getFullNameForAlias(alias string) (string, error) {
+func (a *LPM) getFullNameForAlias(alias string) (string, error) {
 	matches := make([]string, 0)
 
 	for alias := range a.stateFile.Sources {
