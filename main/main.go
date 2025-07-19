@@ -9,7 +9,7 @@ import (
 
 	"github.com/spf13/afero"
 
-	"github.com/luxdefi/lpm/cmd"
+	"github.com/luxfi/lpm/cmd"
 )
 
 func main() {

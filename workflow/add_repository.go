@@ -8,7 +8,7 @@ import (
 
 	"github.com/go-git/go-git/v5/plumbing"
 
-	"github.com/luxdefi/lpm/state"
+	"github.com/luxfi/lpm/state"
 )
 
 var _ Workflow = AddRepository{}

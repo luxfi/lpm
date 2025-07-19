@@ -10,8 +10,8 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/luxdefi/lpm/state"
-	"github.com/luxdefi/lpm/types"
+	"github.com/luxfi/lpm/state"
+	"github.com/luxfi/lpm/types"
 )
 
 func TestUninstallExecute(t *testing.T) {

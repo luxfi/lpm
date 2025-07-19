@@ -10,8 +10,8 @@ import (
 
 	"gopkg.in/yaml.v3"
 
-	"github.com/luxdefi/lpm/git"
-	"github.com/luxdefi/lpm/types"
+	"github.com/luxfi/lpm/git"
+	"github.com/luxfi/lpm/types"
 )
 
 var (

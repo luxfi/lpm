@@ -8,15 +8,15 @@ import (
 	"path/filepath"
 	"testing"
 
-	"github.com/luxdefi/node/utils/perms"
+	"github.com/luxfi/node/utils/perms"
 	"github.com/golang/mock/gomock"
 	"github.com/spf13/afero"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/luxdefi/lpm/checksum"
-	"github.com/luxdefi/lpm/state"
-	"github.com/luxdefi/lpm/types"
+	"github.com/luxfi/lpm/checksum"
+	"github.com/luxfi/lpm/state"
+	"github.com/luxfi/lpm/types"
 )
 
 func TestInstallExecute(t *testing.T) {

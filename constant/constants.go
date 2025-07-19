@@ -5,8 +5,8 @@ package constant
 
 const (
 	AppName                = "lpm"
-	CoreAlias              = "luxdefi/plugins-core"
-	CoreURL                = "https://github.com/luxdefi/plugins-core.git"
+	CoreAlias              = "luxfi/plugins-core"
+	CoreURL                = "https://github.com/luxfi/plugins-core.git"
 	CoreBranch             = "master"
 	QualifiedNameDelimiter = ":"
 	AliasDelimiter         = "/"

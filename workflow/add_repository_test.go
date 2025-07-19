@@ -8,7 +8,7 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"github.com/luxdefi/lpm/state"
+	"github.com/luxfi/lpm/state"
 )
 
 func TestAddRepositoryExecute(t *testing.T) {
