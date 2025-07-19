@@ -7,13 +7,13 @@ set -e
 usage() {
   this=$1
   cat <<EOF
-$this: download go binaries for luxdefi/lpm
+$this: download go binaries for luxfi/lpm
 
 Usage: $this [-b] bindir [-d] [tag]
   -b sets bindir or installation directory, Defaults to ./bin
   -d turns on debug logging
    [tag] is a tag from
-   https://github.com/luxdefi/lpm/releases
+   https://github.com/luxfi/lpm/releases
    If tag is missing, then the latest will be used.
 
 EOF
@@ -333,7 +333,7 @@ End of functions from https://github.com/client9/shlib
 EOF
 
 PROJECT_NAME=lpm
-OWNER=luxdefi
+OWNER=luxfi
 REPO="lpm"
 BINARY=lpm
 FORMAT=tar.gz

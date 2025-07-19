@@ -10,11 +10,11 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/luxdefi/node/utils/perms"
+	"github.com/luxfi/node/utils/perms"
 	"github.com/spf13/afero"
 
-	"github.com/luxdefi/lpm/checksum"
-	"github.com/luxdefi/lpm/state"
+	"github.com/luxfi/lpm/checksum"
+	"github.com/luxfi/lpm/state"
 )
 
 var _ Workflow = &Install{}

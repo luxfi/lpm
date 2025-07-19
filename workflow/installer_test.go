@@ -11,7 +11,7 @@ import (
 	"github.com/spf13/afero"
 	"github.com/stretchr/testify/assert"
 
-	"github.com/luxdefi/lpm/url"
+	"github.com/luxfi/lpm/url"
 )
 
 func TestTmpInstaller_Download(t *testing.T) {

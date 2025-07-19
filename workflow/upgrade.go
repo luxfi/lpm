@@ -8,8 +8,8 @@ import (
 
 	"github.com/spf13/afero"
 
-	"github.com/luxdefi/lpm/git"
-	"github.com/luxdefi/lpm/state"
+	"github.com/luxfi/lpm/git"
+	"github.com/luxfi/lpm/state"
 )
 
 type UpgradeConfig struct {

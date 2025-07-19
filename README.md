@@ -3,10 +3,10 @@
 **Note: This code is currently in Alpha. Proceed at your own risk.**
 
 `lpm` is a command-line tool to manage virtual machines binaries for
-the [Lux Network](https://github.com/luxdefi/node).
+the [Lux Network](https://github.com/luxfi/node).
 
 `lpm` allows users to build their own custom repositories to provide virtual machine and subnet definitions outside of
-the [plugins-core](https://github.com/luxdefi/plugins-core) repository. `plugins-core`
+the [plugins-core](https://github.com/luxfi/plugins-core) repository. `plugins-core`
 is a community-sourced set of plugins and subnets that ships with the `lpm`, but users have the option of adding their own using
 the `add-repository` command.
 
@@ -18,7 +18,7 @@ the `add-repository` command.
 To download a binary for the latest release, run:
 
 ```
-curl -sSfL https://raw.githubusercontent.com/luxdefi/pm/master/scripts/install.sh | sh -s
+curl -sSfL https://raw.githubusercontent.com/luxfi/pm/master/scripts/install.sh | sh -s
 ```
 
 The binary will be installed inside the `./bin` directory (relative to where the install command was run).
@@ -39,7 +39,7 @@ To add it to your path permanently, add an export command to your shell initiali
 To download the binary into a specific directory, run:
 
 ```
-curl -sSfL https://raw.githubusercontent.com/luxdefi/pm/master/scripts/install.sh | sh -s -- -b <relative directory>
+curl -sSfL https://raw.githubusercontent.com/luxfi/pm/master/scripts/install.sh | sh -s -- -b <relative directory>
 ```
 
 ### Source
@@ -57,7 +57,7 @@ The resulting `lpm` binary will be available in `./build/lpm`.
 Starts tracking a plugin repository.
 
 ```shell
-lpm add-repository --alias luxdefi/core --url https://github.com/luxdefi/plugins-core.git --branch master
+lpm add-repository --alias luxfi/core --url https://github.com/luxfi/plugins-core.git --branch master
 ```
 
 #### Parameters:
@@ -66,7 +66,7 @@ lpm add-repository --alias luxdefi/core --url https://github.com/luxdefi/plugins
 - `--branch`: The branch name to track.
 
 ### install-vm
-Installs a virtual machine by its alias. Either a partial alias (e.g `spacesvm`) or a fully qualified name including the repository (e.g `luxdefi/core:spacesvm`) to disambiguate between multiple repositories can be used.
+Installs a virtual machine by its alias. Either a partial alias (e.g `spacesvm`) or a fully qualified name including the repository (e.g `luxfi/core:spacesvm`) to disambiguate between multiple repositories can be used.
 
 If multiple matches are found (e.g `repository-1/foovm`, `repository-2/foovm`), you will be required to specify the
 fully qualified name of the virtual machine to disambiguate the repository to install from.
@@ -82,7 +82,7 @@ lpm install-vm --vm spacesvm
 
 
 ### join-subnet
-Joins a subnet by its alias. Either a partial alias (e.g `spaces`) or a fully qualified name including the repository (e.g `luxdefi/core:spaces`) to disambiguate between multiple repositories can be used.
+Joins a subnet by its alias. Either a partial alias (e.g `spaces`) or a fully qualified name including the repository (e.g `luxfi/core:spaces`) to disambiguate between multiple repositories can be used.
 
 This will install dependencies for the subnet by calling `install-vm` on each virtual machine required by the subnet.
 
@@ -165,19 +165,19 @@ lpm remove-repository --alias organization/repository
 $ ./build/lpm join-subnet --subnet spaces
 
 Installing virtual machines for subnet Ai42MkKqk8yjXFCpoHXw7rdTWSHiKEMqh5h8gbxwjgkCUfkrk.
-Downloading https://github.com/luxdefi/spacesvm/archive/refs/tags/v0.0.3.tar.gz...
+Downloading https://github.com/luxfi/spacesvm/archive/refs/tags/v0.0.3.tar.gz...
 HTTP response 200 OK
 Calculating checksums...
 Saw expected checksum value of 1ac250f6c40472f22eaf0616fc8c886078a4eaa9b2b85fbb4fb7783a1db6af3f
 Creating sources directory...
-Unpacking luxdefi/network-plugins-core:spacesvm...
+Unpacking luxfi/network-plugins-core:spacesvm...
 Running install script at scripts/build.sh...
 Building spacesvm in ./build/sqja3uK17MJxfC7AN8nGadBw9JK5BcrsNwNynsqP5Gih8M5Bm
 Building spaces-cli in ./build/spaces-cli
 Moving binary sqja3uK17MJxfC7AN8nGadBw9JK5BcrsNwNynsqP5Gih8M5Bm into plugin directory...
 Cleaning up temporary files...
 Adding virtual machine sqja3uK17MJxfC7AN8nGadBw9JK5BcrsNwNynsqP5Gih8M5Bm to installation registry...
-Successfully installed luxdefi/plugins-core:spacesvm@v0.0.4 in /Users/joshua.kim/go/src/github.com/luxdefi/node/build/plugins/sqja3uK17MJxfC7AN8nGadBw9JK5BcrsNwNynsqP5Gih8M5Bm
+Successfully installed luxfi/plugins-core:spacesvm@v0.0.4 in /Users/joshua.kim/go/src/github.com/luxfi/node/build/plugins/sqja3uK17MJxfC7AN8nGadBw9JK5BcrsNwNynsqP5Gih8M5Bm
 Updating virtual machines...
 Node at 127.0.0.1:9650/ext/admin was offline. Virtual machines will be available upon node startup.
 Whitelisting subnet Ai42MkKqk8yjXFCpoHXw7rdTWSHiKEMqh5h8gbxwjgkCUfkrk...

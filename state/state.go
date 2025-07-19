@@ -8,7 +8,7 @@ import (
 	"os"
 	"path/filepath"
 
-	"github.com/luxdefi/node/utils/perms"
+	"github.com/luxfi/node/utils/perms"
 	"gopkg.in/yaml.v3"
 )
 

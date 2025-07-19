@@ -10,9 +10,9 @@ import (
 	"github.com/go-git/go-git/v5/plumbing/transport/http"
 	"github.com/spf13/afero"
 
-	"github.com/luxdefi/lpm/git"
-	"github.com/luxdefi/lpm/state"
-	"github.com/luxdefi/lpm/util"
+	"github.com/luxfi/lpm/git"
+	"github.com/luxfi/lpm/state"
+	"github.com/luxfi/lpm/util"
 )
 
 var _ Workflow = &Update{}
