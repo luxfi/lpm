@@ -6,7 +6,7 @@ package admin
 import (
 	"context"
 
-	adminapi "github.com/luxfi/node/api/admin"
+	"github.com/luxfi/node/api/admin"
 )
 
 var _ Client = &client{}
@@ -17,12 +17,12 @@ type Client interface {
 }
 
 type client struct {
-	client *adminapi.Client
+	client admin.Client
 }
 
 func NewClient(url string) Client {
 	return &client{
-		client: adminapi.NewClient(url),
+		client: admin.NewClient(url),
 	}
 }
 
