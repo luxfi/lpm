@@ -187,7 +187,7 @@ github.com/luxfi/log v0.1.1/go.mod h1:trb99HbI+YW6nu+So4jWKey20oHeRhlee70xbuR6Ga
 github.com/luxfi/metrics v1.1.1 h1:aKVEtytAl3TqSvInRpDc6ZdSJsCbTmCCl0UAl2YNXWU=
 github.com/luxfi/metrics v1.1.1/go.mod h1:ynSRcRjG+t1snUvFUbQFEu0UGibyw8gsitltQ9H1YDA=
 github.com/luxfi/trace v0.1.0 h1:rwJb/1EtYbjcokLe8/fU0yD8oBGs9QF7DCBO+dk/WGs=
-github.com/luxfi/trace v0.1.0/go.mod h1:6jhCW0hPCFv7qzFsL0w/amHRv7PfNIyW77N4WDS3U5Q=
+github.com/luxfi/trace v0.1.0/go.mod h1:nxbVJybpgn9JI38vYrguYUYwQDaqCMG5hHy73k/j9e4=
 github.com/magiconair/properties v1.8.7 h1:IeQXZAiQcpL9mgcAe1Nu6cX9LLw6ExEHKjN0VQdvPDY=
 github.com/magiconair/properties v1.8.7/go.mod h1:Dhd985XPs7jluiymwWYZ0G4Z61jb3vdS329zhj2hYo0=
 github.com/mitchellh/mapstructure v1.5.0 h1:jeMsZIYE/09sWLaz43PL7Gy6RuMjD2eJVyuac5Z2hdY=
