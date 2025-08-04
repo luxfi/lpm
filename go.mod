@@ -29,7 +29,7 @@ require (
 	github.com/cyphar/filepath-securejoin v0.2.4 // indirect
 	github.com/davecgh/go-spew v1.1.2-0.20180830191138-d8f796af33cc // indirect
 	github.com/emirpasic/gods v1.18.1 // indirect
-	github.com/fsnotify/fsnotify v1.7.0 // indirect
+	github.com/fsnotify/fsnotify v1.8.0 // indirect
 	github.com/go-git/gcfg v1.5.1-0.20230307220236-3a3c6141e376 // indirect
 	github.com/go-git/go-billy/v5 v5.5.0 // indirect
 	github.com/go-logr/logr v1.4.3 // indirect
@@ -50,13 +50,13 @@ require (
 	github.com/jbenet/go-context v0.0.0-20150711004518-d14ea06fba99 // indirect
 	github.com/kevinburke/ssh_config v1.2.0 // indirect
 	github.com/klauspost/compress v1.18.0 // indirect
-	github.com/luxfi/crypto v1.1.1 // indirect
+	github.com/luxfi/crypto v1.2.0 // indirect
 	github.com/luxfi/database v1.1.4 // indirect
-	github.com/luxfi/geth v1.16.6 // indirect
+	github.com/luxfi/geth v1.16.9 // indirect
 	github.com/luxfi/ids v1.0.2 // indirect
 	github.com/luxfi/log v0.1.1 // indirect
 	github.com/luxfi/metrics v1.1.1 // indirect
-	github.com/luxfi/trace v0.1.0 // indirect
+	github.com/luxfi/trace v0.1.1 // indirect
 	github.com/magiconair/properties v1.8.7 // indirect
 	github.com/mitchellh/mapstructure v1.5.0 // indirect
 	github.com/mr-tron/base58 v1.2.0 // indirect
@@ -105,7 +105,7 @@ require (
 	golang.org/x/time v0.12.0 // indirect
 	gonum.org/v1/gonum v0.14.0 // indirect
 	google.golang.org/genproto/googleapis/api v0.0.0-20250721164621-a45f3dfb1074 // indirect
-	google.golang.org/genproto/googleapis/rpc v0.0.0-20250721164621-a45f3dfb1074 // indirect
+	google.golang.org/genproto/googleapis/rpc v0.0.0-20250728155136-f173205681a0 // indirect
 	google.golang.org/grpc v1.74.2 // indirect
 	google.golang.org/protobuf v1.36.6 // indirect
 	gopkg.in/ini.v1 v1.67.0 // indirect
@@ -116,3 +116,5 @@ require (
 replace github.com/luxfi/geth => ../geth
 
 replace github.com/luxfi/crypto => ../crypto
+
+replace github.com/luxfi/node => ../node
