@@ -10,7 +10,7 @@ require (
 	github.com/luxfi/node v1.13.4
 	github.com/spf13/afero v1.14.0
 	github.com/spf13/cobra v1.9.1
-	github.com/spf13/viper v1.18.1
+	github.com/spf13/viper v1.20.1
 	github.com/stretchr/testify v1.10.0
 	gopkg.in/yaml.v3 v3.0.1
 )
@@ -28,6 +28,7 @@ require (
 	github.com/cloudflare/circl v1.6.1 // indirect
 	github.com/cyphar/filepath-securejoin v0.2.4 // indirect
 	github.com/davecgh/go-spew v1.1.2-0.20180830191138-d8f796af33cc // indirect
+	github.com/decred/dcrd/dcrec/secp256k1/v4 v4.4.0 // indirect
 	github.com/emirpasic/gods v1.18.1 // indirect
 	github.com/fsnotify/fsnotify v1.8.0 // indirect
 	github.com/go-git/gcfg v1.5.1-0.20230307220236-3a3c6141e376 // indirect
@@ -35,6 +36,7 @@ require (
 	github.com/go-logr/logr v1.4.3 // indirect
 	github.com/go-logr/stdr v1.2.2 // indirect
 	github.com/go-ole/go-ole v1.3.0 // indirect
+	github.com/go-viper/mapstructure/v2 v2.2.1 // indirect
 	github.com/golang/groupcache v0.0.0-20210331224755-41bb18bfe9da // indirect
 	github.com/google/btree v1.1.3 // indirect
 	github.com/google/renameio/v2 v2.0.0 // indirect
@@ -44,41 +46,37 @@ require (
 	github.com/gorilla/websocket v1.5.1 // indirect
 	github.com/grpc-ecosystem/go-grpc-prometheus v1.2.0 // indirect
 	github.com/grpc-ecosystem/grpc-gateway/v2 v2.27.1 // indirect
-	github.com/hashicorp/hcl v1.0.0 // indirect
 	github.com/holiman/uint256 v1.3.2 // indirect
 	github.com/inconshreveable/mousetrap v1.1.0 // indirect
 	github.com/jbenet/go-context v0.0.0-20150711004518-d14ea06fba99 // indirect
 	github.com/kevinburke/ssh_config v1.2.0 // indirect
 	github.com/klauspost/compress v1.18.0 // indirect
-	github.com/luxfi/crypto v1.2.0 // indirect
-	github.com/luxfi/database v1.1.4 // indirect
-	github.com/luxfi/geth v1.16.9 // indirect
+	github.com/luxfi/crypto v1.2.7 // indirect
+	github.com/luxfi/database v1.1.9 // indirect
+	github.com/luxfi/geth v1.16.24 // indirect
 	github.com/luxfi/ids v1.0.2 // indirect
-	github.com/luxfi/log v0.1.1 // indirect
+	github.com/luxfi/log v1.0.1 // indirect
 	github.com/luxfi/metrics v1.1.1 // indirect
 	github.com/luxfi/trace v0.1.1 // indirect
-	github.com/magiconair/properties v1.8.7 // indirect
-	github.com/mitchellh/mapstructure v1.5.0 // indirect
 	github.com/mr-tron/base58 v1.2.0 // indirect
 	github.com/munnerz/goautoneg v0.0.0-20191010083416-a7dc8b61c822 // indirect
-	github.com/nbutton23/zxcvbn-go v0.0.0-20180912185939-ae427f1e4c1d // indirect
-	github.com/pelletier/go-toml/v2 v2.1.1 // indirect
+	github.com/nbutton23/zxcvbn-go v0.0.0-20210217022336-fa2cb2858354 // indirect
+	github.com/pelletier/go-toml/v2 v2.2.3 // indirect
 	github.com/pires/go-proxyproto v0.7.0 // indirect
 	github.com/pjbgf/sha1cd v0.3.0 // indirect
 	github.com/pmezard/go-difflib v1.0.1-0.20181226105442-5d4384ee4fb2 // indirect
-	github.com/prometheus/client_golang v1.22.0 // indirect
-	github.com/prometheus/client_model v0.6.1 // indirect
-	github.com/prometheus/common v0.62.0 // indirect
-	github.com/prometheus/procfs v0.15.1 // indirect
+	github.com/prometheus/client_golang v1.23.0 // indirect
+	github.com/prometheus/client_model v0.6.2 // indirect
+	github.com/prometheus/common v0.65.0 // indirect
+	github.com/prometheus/procfs v0.16.1 // indirect
 	github.com/rs/cors v1.10.1 // indirect
-	github.com/sagikazarmark/locafero v0.4.0 // indirect
-	github.com/sagikazarmark/slog-shim v0.1.0 // indirect
+	github.com/sagikazarmark/locafero v0.7.0 // indirect
 	github.com/sergi/go-diff v1.3.1 // indirect
 	github.com/shirou/gopsutil v3.21.11+incompatible // indirect
 	github.com/skeema/knownhosts v1.2.1 // indirect
 	github.com/sourcegraph/conc v0.3.0 // indirect
 	github.com/spf13/cast v1.9.2 // indirect
-	github.com/spf13/pflag v1.0.6 // indirect
+	github.com/spf13/pflag v1.0.7 // indirect
 	github.com/subosito/gotenv v1.6.0 // indirect
 	github.com/tklauser/go-sysconf v0.3.13 // indirect
 	github.com/tklauser/numcpus v0.7.0 // indirect
@@ -108,8 +106,6 @@ require (
 	google.golang.org/genproto/googleapis/rpc v0.0.0-20250728155136-f173205681a0 // indirect
 	google.golang.org/grpc v1.74.2 // indirect
 	google.golang.org/protobuf v1.36.6 // indirect
-	gopkg.in/ini.v1 v1.67.0 // indirect
-	gopkg.in/natefinch/lumberjack.v2 v2.2.1 // indirect
 	gopkg.in/warnings.v0 v0.1.2 // indirect
 )
 
