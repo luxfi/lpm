@@ -1,6 +1,6 @@
 module github.com/luxfi/lpm
 
-go 1.25.1
+go 1.25
 
 require (
 	github.com/cavaliergopher/grab/v3 v3.0.1
