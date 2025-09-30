@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Copyright (C) 2019-2021, Lux Partners Limited. All rights reserved.
+# Copyright (C) 2019-2025, Lux Partners Limited. All rights reserved.
 # See the file LICENSE for licensing terms.
 
 
