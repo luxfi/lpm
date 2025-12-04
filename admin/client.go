@@ -17,7 +17,7 @@ type Client interface {
 }
 
 type client struct {
-	client admin.Client
+	client *admin.Client
 }
 
 func NewClient(url string) Client {
