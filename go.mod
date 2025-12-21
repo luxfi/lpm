@@ -130,11 +130,3 @@ require (
 	gopkg.in/natefinch/lumberjack.v2 v2.2.1 // indirect
 	gopkg.in/warnings.v0 v0.1.2 // indirect
 )
-
-replace (
-	github.com/luxfi/consensus => /home/z/work/lux/consensus
-	github.com/luxfi/crypto => /home/z/work/lux/crypto
-	github.com/luxfi/evm => /home/z/work/lux/evm
-	github.com/luxfi/genesis => /home/z/work/lux/genesis
-	github.com/luxfi/geth => /home/z/work/lux/geth
-)
