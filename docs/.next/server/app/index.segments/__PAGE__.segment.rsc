@@ -1,0 +1,6 @@
+1:"$Sreact.fragment"
+2:I[50051,["/_next/static/chunks/0e6a3b4f74713263.js"],""]
+3:I[41050,["/_next/static/chunks/ec39348990c3a291.js","/_next/static/chunks/e612c3809afb78cf.js"],"OutletBoundary"]
+4:"$Sreact.suspense"
+0:{"buildId":"mceI_GndKfqbcsb0BuohB","rsc":["$","$1","c",{"children":[["$","main",null,{"className":"flex flex-1 flex-col items-center justify-center px-4","children":["$","div",null,{"className":"container flex flex-col items-center gap-12 py-24 sm:gap-16 sm:py-32","children":[["$","div",null,{"className":"flex flex-col items-center gap-4 text-center","children":[["$","h1",null,{"className":"text-4xl font-bold tracking-tight sm:text-6xl","children":"Documentation"}],["$","p",null,{"className":"max-w-2xl text-lg text-muted-foreground","children":"Get started with our comprehensive documentation"}]]}],["$","div",null,{"className":"flex gap-4","children":["$","$L2",null,{"href":"/docs","className":"inline-flex h-10 items-center justify-center rounded-md bg-primary px-8 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90","children":"Get Started"}]}]]}]}],null,["$","$L3",null,{"children":["$","$4",null,{"name":"Next.MetadataOutlet","children":"$@5"}]}]]}],"loading":null,"isPartial":false}
+5:null
