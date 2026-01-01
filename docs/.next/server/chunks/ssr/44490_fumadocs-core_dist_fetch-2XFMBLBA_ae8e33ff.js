@@ -1,3 +1,0 @@
-module.exports=[97369,a=>{"use strict";a.i(48542);var b=new Map;async function c(a,{api:c="/api/search",locale:d,tag:e}){let f=new URL(c,window.location.origin);f.searchParams.set("query",a),d&&f.searchParams.set("locale",d),e&&f.searchParams.set("tag",Array.isArray(e)?e.join(","):e);let g=`${f.pathname}?${f.searchParams}`,h=b.get(g);if(h)return h;let i=await fetch(g);if(!i.ok)throw Error(await i.text());let j=await i.json();return b.set(g,j),j}a.s(["fetchDocs",()=>c])}];
-
-//# sourceMappingURL=44490_fumadocs-core_dist_fetch-2XFMBLBA_ae8e33ff.js.map

@@ -48,7 +48,7 @@ func New(fs afero.Fs) (*cobra.Command, error) {
 
 	rootCmd.PersistentFlags().String(configFileKey, "", "path to configuration file for the lpm")
 	rootCmd.PersistentFlags().String(lpmPathKey, lpmDir, "path to the directory lpm creates its artifacts")
-	rootCmd.PersistentFlags().String(pluginPathKey, filepath.Join(goPath, "src", "github.com", "luxfi", "node", "build", "plugins"), "path to lux plugin directory")
+	rootCmd.PersistentFlags().String(pluginPathKey, filepath.Join(homeDir, ".lux", "plugins"), "path to lux plugin directory")
 	rootCmd.PersistentFlags().String(credentialsFileKey, "", "path to credentials file")
 	rootCmd.PersistentFlags().String(adminAPIEndpointKey, "127.0.0.1:9650/ext/admin", "endpoint for the lux admin api")
 
@@ -69,6 +69,7 @@ func New(fs afero.Fs) (*cobra.Command, error) {
 		uninstall(fs),
 		update(fs),
 		upgrade(fs),
+		link(fs),
 		listRepositories(fs),
 		joinSubnet(fs),
 		addRepository(fs),
