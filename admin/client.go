@@ -6,7 +6,7 @@ package admin
 import (
 	"context"
 
-	"github.com/luxfi/node/api/admin"
+	"github.com/luxfi/sdk/api/admin"
 )
 
 var _ Client = &client{}
