@@ -9,7 +9,7 @@ import (
 	"path/filepath"
 
 	"github.com/luxfi/ids"
-	"github.com/luxfi/node/utils/perms"
+	"github.com/luxfi/vm/utils/perms"
 	"github.com/spf13/afero"
 )
 

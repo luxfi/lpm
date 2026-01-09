@@ -12,7 +12,7 @@ import (
 	"syscall"
 	"text/tabwriter"
 
-	"github.com/luxfi/node/utils/perms"
+	"github.com/luxfi/vm/utils/perms"
 	"github.com/go-git/go-git/v5/plumbing"
 	"github.com/go-git/go-git/v5/plumbing/transport/http"
 	"github.com/juju/fslock"

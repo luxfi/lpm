@@ -10,7 +10,7 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/luxfi/node/utils/perms"
+	"github.com/luxfi/vm/utils/perms"
 	"github.com/spf13/afero"
 
 	"github.com/luxfi/lpm/checksum"
