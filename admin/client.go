@@ -6,14 +6,14 @@ package admin
 import (
 	"context"
 
-	"github.com/luxfi/sdk/api/admin"
+	"github.com/luxfi/sdk/admin"
 )
 
 var _ Client = &client{}
 
 type Client interface {
 	LoadVMs() error
-	WhitelistSubnet(subnetID string) error
+	WhitelistChain(chainID string) error
 }
 
 type client struct {
@@ -32,13 +32,13 @@ func (c *client) LoadVMs() error {
 	return err
 }
 
-func (c *client) WhitelistSubnet(subnetID string) error {
-	// id, err := ids.FromString(subnetID)
+func (c *client) WhitelistChain(chainID string) error {
+	// id, err := ids.FromString(chainID)
 	// if err != nil {
 	// 	return err
 	// }
 	//
-	// _, err = c.client.WhitelistSubnet(context.Background(), id)
+	// _, err = c.client.WhitelistChain(context.Background(), id)
 	// return err
 	return nil
 }

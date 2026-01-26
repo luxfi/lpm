@@ -8,8 +8,8 @@ import (
 	"path/filepath"
 	"testing"
 
-	"github.com/luxfi/vm/utils/perms"
 	"github.com/golang/mock/gomock"
+	"github.com/luxfi/filesystem/perms"
 	"github.com/spf13/afero"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"

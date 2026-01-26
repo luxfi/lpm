@@ -3,35 +3,35 @@
 
 package types
 
-var _ Definition = &Subnet{}
+var _ Definition = &Chain{}
 
-type Subnet struct {
+type Chain struct {
 	ID          map[string]string `yaml:"id"`
 	Alias       string            `yaml:"alias"`
 	Homepage    string            `yaml:"homepage"`
 	Description string            `yaml:"description"`
 	Maintainers []string          `yaml:"maintainers"`
 	VMs         []string          `yaml:"vms"`
-	// Config      subnets.SubnetConfig `yaml:"config,omitempty"`
+	// Config      chains.ChainConfig `yaml:"config,omitempty"`
 }
 
-func (s Subnet) GetID(network string) (string, bool) {
+func (s Chain) GetID(network string) (string, bool) {
 	id, ok := s.ID[network]
 	return id, ok
 }
 
-func (s Subnet) GetAlias() string {
+func (s Chain) GetAlias() string {
 	return s.Alias
 }
 
-func (s Subnet) GetHomepage() string {
+func (s Chain) GetHomepage() string {
 	return s.Homepage
 }
 
-func (s Subnet) GetDescription() string {
+func (s Chain) GetDescription() string {
 	return s.Description
 }
 
-func (s Subnet) GetMaintainers() []string {
+func (s Chain) GetMaintainers() []string {
 	return s.Maintainers
 }

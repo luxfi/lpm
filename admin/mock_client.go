@@ -50,16 +50,16 @@ func (mr *MockClientMockRecorder) LoadVMs() *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "LoadVMs", reflect.TypeOf((*MockClient)(nil).LoadVMs))
 }
 
-// WhitelistSubnet mocks base method.
-func (m *MockClient) WhitelistSubnet(subnetID string) error {
+// WhitelistChain mocks base method.
+func (m *MockClient) WhitelistChain(chainID string) error {
 	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "WhitelistSubnet", subnetID)
+	ret := m.ctrl.Call(m, "WhitelistChain", chainID)
 	ret0, _ := ret[0].(error)
 	return ret0
 }
 
-// WhitelistSubnet indicates an expected call of WhitelistSubnet.
-func (mr *MockClientMockRecorder) WhitelistSubnet(subnetID interface{}) *gomock.Call {
+// WhitelistChain indicates an expected call of WhitelistChain.
+func (mr *MockClientMockRecorder) WhitelistChain(chainID interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "WhitelistSubnet", reflect.TypeOf((*MockClient)(nil).WhitelistSubnet), subnetID)
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "WhitelistChain", reflect.TypeOf((*MockClient)(nil).WhitelistChain), chainID)
 }

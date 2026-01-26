@@ -12,10 +12,10 @@ import (
 	"syscall"
 	"text/tabwriter"
 
-	"github.com/luxfi/vm/utils/perms"
 	"github.com/go-git/go-git/v5/plumbing"
 	"github.com/go-git/go-git/v5/plumbing/transport/http"
 	"github.com/juju/fslock"
+	"github.com/luxfi/filesystem/perms"
 	"github.com/spf13/afero"
 
 	"github.com/luxfi/lpm/admin"
@@ -205,28 +205,28 @@ func (a *LPM) uninstall(name string) error {
 	return a.executor.Execute(wf)
 }
 
-func (a *LPM) JoinSubnet(alias string) error {
-	return a.parseAndRun(alias, a.joinSubnet)
+func (a *LPM) JoinChain(alias string) error {
+	return a.parseAndRun(alias, a.joinChain)
 }
 
-func (a *LPM) joinSubnet(fullName string) error {
+func (a *LPM) joinChain(fullName string) error {
 	alias, plugin := util.ParseQualifiedName(fullName)
 	repo, err := a.repoFactory.GetRepository(alias)
 	if err != nil {
 		return err
 	}
 
-	definition, err := repo.GetSubnet(plugin)
+	definition, err := repo.GetChain(plugin)
 	if err != nil {
 		return err
 	}
 
-	subnet := definition.Definition
-	subnetID, _ := subnet.GetID(constant.DefaultNetwork)
+	chain := definition.Definition
+	chainID, _ := chain.GetID(constant.DefaultNetwork)
 
 	// TODO prompt user, add force flag
-	fmt.Printf("Installing virtual machines for subnet %s.\n", subnetID)
-	for _, vm := range subnet.VMs {
+	fmt.Printf("Installing virtual machines for chain %s.\n", chainID)
+	for _, vm := range chain.VMs {
 		if err := a.Install(strings.Join([]string{alias, vm}, constant.QualifiedNameDelimiter)); err != nil {
 			return err
 		}
@@ -239,14 +239,14 @@ func (a *LPM) joinSubnet(fullName string) error {
 		return err
 	}
 
-	fmt.Printf("Whitelisting subnet %s...\n", subnetID)
-	if err := a.adminClient.WhitelistSubnet(subnetID); errors.Is(err, syscall.ECONNREFUSED) {
-		fmt.Printf("Node at %s was offline. You'll need to whitelist the subnet upon node restart.\n", a.adminAPIEndpoint)
+	fmt.Printf("Whitelisting chain %s...\n", chainID)
+	if err := a.adminClient.WhitelistChain(chainID); errors.Is(err, syscall.ECONNREFUSED) {
+		fmt.Printf("Node at %s was offline. You'll need to whitelist the chain upon node restart.\n", a.adminAPIEndpoint)
 	} else if err != nil {
 		return err
 	}
 
-	fmt.Printf("Finished installing virtual machines for subnet %s.\n", subnet.ID)
+	fmt.Printf("Finished installing virtual machines for chain %s.\n", chain.ID)
 	return nil
 }
 
