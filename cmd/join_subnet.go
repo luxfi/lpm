@@ -8,16 +8,16 @@ import (
 	"github.com/spf13/cobra"
 )
 
-func joinSubnet(fs afero.Fs) *cobra.Command {
-	subnet := ""
+func joinChain(fs afero.Fs) *cobra.Command {
+	chain := ""
 
 	command := &cobra.Command{
-		Use:   "join-subnet",
-		Short: "Installs all virtual machines for a subnet.",
+		Use:   "join-chain",
+		Short: "Installs all virtual machines for a chain.",
 	}
 
-	command.PersistentFlags().StringVar(&subnet, "subnet", "", "subnet alias to join")
-	err := command.MarkPersistentFlagRequired("subnet")
+	command.PersistentFlags().StringVar(&chain, "chain", "", "chain alias to join")
+	err := command.MarkPersistentFlagRequired("chain")
 	if err != nil {
 		panic(err)
 	}
@@ -28,7 +28,7 @@ func joinSubnet(fs afero.Fs) *cobra.Command {
 			return err
 		}
 
-		return lpm.JoinSubnet(subnet)
+		return lpm.JoinChain(chain)
 	}
 
 	return command

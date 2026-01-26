@@ -8,16 +8,16 @@ import (
 	"os"
 	"path/filepath"
 
-	"github.com/luxfi/vm/utils/wrappers"
 	"github.com/go-git/go-git/v5/plumbing/transport/http"
+	"github.com/luxfi/codec/wrappers"
 	"github.com/spf13/afero"
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
 	"gopkg.in/yaml.v3"
 
-	"github.com/luxfi/lpm/lpm"
 	"github.com/luxfi/lpm/config"
 	"github.com/luxfi/lpm/constant"
+	"github.com/luxfi/lpm/lpm"
 )
 
 var (
@@ -37,7 +37,7 @@ const (
 func New(fs afero.Fs) (*cobra.Command, error) {
 	rootCmd := &cobra.Command{
 		Use:   "lpm",
-		Short: "lpm is a plugin manager to help manage virtual machines and subnets",
+		Short: "lpm is a plugin manager to help manage virtual machines and chains",
 		PersistentPreRunE: func(cmd *cobra.Command, args []string) error {
 			// we need to initialize our config here before each command starts,
 			// since Cobra doesn't actually parse any of the flags until
@@ -71,7 +71,7 @@ func New(fs afero.Fs) (*cobra.Command, error) {
 		upgrade(fs),
 		link(fs),
 		listRepositories(fs),
-		joinSubnet(fs),
+		joinChain(fs),
 		addRepository(fs),
 		removeRepository(fs),
 	)

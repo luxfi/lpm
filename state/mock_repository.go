@@ -11,8 +11,8 @@ package state
 import (
 	reflect "reflect"
 
-	types "github.com/luxfi/lpm/types"
 	gomock "github.com/golang/mock/gomock"
+	types "github.com/luxfi/lpm/types"
 )
 
 // MockRepository is a mock of Repository interface.
@@ -52,19 +52,19 @@ func (mr *MockRepositoryMockRecorder) GetPath() *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "GetPath", reflect.TypeOf((*MockRepository)(nil).GetPath))
 }
 
-// GetSubnet mocks base method.
-func (m *MockRepository) GetSubnet(name string) (Definition[types.Subnet], error) {
+// GetChain mocks base method.
+func (m *MockRepository) GetChain(name string) (Definition[types.Chain], error) {
 	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "GetSubnet", name)
-	ret0, _ := ret[0].(Definition[types.Subnet])
+	ret := m.ctrl.Call(m, "GetChain", name)
+	ret0, _ := ret[0].(Definition[types.Chain])
 	ret1, _ := ret[1].(error)
 	return ret0, ret1
 }
 
-// GetSubnet indicates an expected call of GetSubnet.
-func (mr *MockRepositoryMockRecorder) GetSubnet(name interface{}) *gomock.Call {
+// GetChain indicates an expected call of GetChain.
+func (mr *MockRepositoryMockRecorder) GetChain(name interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "GetSubnet", reflect.TypeOf((*MockRepository)(nil).GetSubnet), name)
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "GetChain", reflect.TypeOf((*MockRepository)(nil).GetChain), name)
 }
 
 // GetVM mocks base method.

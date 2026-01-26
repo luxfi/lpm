@@ -7,11 +7,12 @@ require (
 	github.com/go-git/go-git/v5 v5.16.2
 	github.com/golang/mock v1.7.0-rc.1
 	github.com/juju/fslock v0.0.0-20160525022230-4d5c94c67b4b
-	github.com/luxfi/ids v1.2.8
-	github.com/luxfi/sdk/api v0.0.2
-	github.com/luxfi/vm v1.0.15
+	github.com/luxfi/codec v1.1.3
+	github.com/luxfi/filesystem v0.0.1
+	github.com/luxfi/ids v1.2.9
+	github.com/luxfi/sdk v1.16.46
 	github.com/spf13/afero v1.15.0
-	github.com/spf13/cobra v1.9.1
+	github.com/spf13/cobra v1.10.2
 	github.com/spf13/viper v1.21.0
 	github.com/stretchr/testify v1.11.1
 	gopkg.in/yaml.v3 v3.0.1
@@ -30,17 +31,15 @@ require (
 	github.com/go-git/go-billy/v5 v5.6.2 // indirect
 	github.com/go-viper/mapstructure/v2 v2.4.0 // indirect
 	github.com/golang/groupcache v0.0.0-20241129210726-2c02b8208cf8 // indirect
-	github.com/google/renameio/v2 v2.0.0 // indirect
+	github.com/google/renameio/v2 v2.0.1 // indirect
 	github.com/gorilla/rpc v1.2.1 // indirect
-	github.com/holiman/uint256 v1.3.2 // indirect
 	github.com/inconshreveable/mousetrap v1.1.0 // indirect
 	github.com/jbenet/go-context v0.0.0-20150711004518-d14ea06fba99 // indirect
 	github.com/kevinburke/ssh_config v1.2.0 // indirect
-	github.com/luxfi/codec v1.1.2 // indirect
-	github.com/luxfi/crypto v1.17.38 // indirect
-	github.com/luxfi/formatting v1.0.0 // indirect
-	github.com/luxfi/log v1.2.1 // indirect
-	github.com/luxfi/mock v0.1.0 // indirect
+	github.com/luxfi/api v1.0.1 // indirect
+	github.com/luxfi/crypto v1.17.40 // indirect
+	github.com/luxfi/formatting v1.0.1 // indirect
+	github.com/luxfi/mock v0.1.1 // indirect
 	github.com/luxfi/rpc v1.0.0 // indirect
 	github.com/mr-tron/base58 v1.2.0 // indirect
 	github.com/onsi/gomega v1.38.3 // indirect
@@ -55,14 +54,10 @@ require (
 	github.com/subosito/gotenv v1.6.0 // indirect
 	github.com/xanzy/ssh-agent v0.3.3 // indirect
 	go.uber.org/mock v0.6.0 // indirect
-	go.uber.org/multierr v1.11.0 // indirect
-	go.uber.org/zap v1.27.1 // indirect
 	go.yaml.in/yaml/v3 v3.0.4 // indirect
 	golang.org/x/crypto v0.46.0 // indirect
-	golang.org/x/exp v0.0.0-20251219203646-944ab1f22d93 // indirect
 	golang.org/x/net v0.48.0 // indirect
 	golang.org/x/sys v0.39.0 // indirect
 	golang.org/x/text v0.32.0 // indirect
-	gopkg.in/natefinch/lumberjack.v2 v2.2.1 // indirect
 	gopkg.in/warnings.v0 v0.1.2 // indirect
 )

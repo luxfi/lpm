@@ -15,17 +15,17 @@ import (
 )
 
 var (
-	vmDir     = "vms"
-	subnetDir = "subnets"
+	vmDir    = "vms"
+	chainDir = "chains"
 
 	extension = "yaml"
 )
 
-// Repository wraps a plugin repository's VMs and Subnets
+// Repository wraps a plugin repository's VMs and Chains
 type Repository interface {
 	GetPath() string
 	GetVM(name string) (Definition[types.VM], error)
-	GetSubnet(name string) (Definition[types.Subnet], error)
+	GetChain(name string) (Definition[types.Chain], error)
 }
 
 type DiskRepository struct {
@@ -37,8 +37,8 @@ func (d DiskRepository) GetVM(name string) (Definition[types.VM], error) {
 	return get[types.VM](d, vmDir, name)
 }
 
-func (d DiskRepository) GetSubnet(name string) (Definition[types.Subnet], error) {
-	return get[types.Subnet](d, subnetDir, name)
+func (d DiskRepository) GetChain(name string) (Definition[types.Chain], error) {
+	return get[types.Chain](d, chainDir, name)
 }
 
 func (d DiskRepository) GetPath() string {
