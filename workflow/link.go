@@ -8,8 +8,8 @@ import (
 	"os"
 	"path/filepath"
 
-	"github.com/luxfi/ids"
 	"github.com/luxfi/filesystem/perms"
+	"github.com/luxfi/ids"
 	"github.com/spf13/afero"
 )
 
