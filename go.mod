@@ -4,7 +4,7 @@ go 1.25.5
 
 require (
 	github.com/cavaliergopher/grab/v3 v3.0.1
-	github.com/go-git/go-git/v5 v5.16.2
+	github.com/go-git/go-git/v5 v5.16.4
 	github.com/golang/mock v1.7.0-rc.1
 	github.com/juju/fslock v0.0.0-20160525022230-4d5c94c67b4b
 	github.com/luxfi/codec v1.1.3
@@ -31,7 +31,7 @@ require (
 	github.com/go-git/go-billy/v5 v5.6.2 // indirect
 	github.com/go-viper/mapstructure/v2 v2.5.0 // indirect
 	github.com/golang/groupcache v0.0.0-20241129210726-2c02b8208cf8 // indirect
-	github.com/google/renameio/v2 v2.0.1 // indirect
+	github.com/google/renameio/v2 v2.0.2 // indirect
 	github.com/gorilla/rpc v1.2.1 // indirect
 	github.com/inconshreveable/mousetrap v1.1.0 // indirect
 	github.com/jbenet/go-context v0.0.0-20150711004518-d14ea06fba99 // indirect
