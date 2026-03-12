@@ -72,7 +72,7 @@ func NewInstallGitLab(config InstallGitLabConfig) *InstallGitLab {
 
 // glRelease is a minimal GitLab release API response.
 type glRelease struct {
-	TagName string  `json:"tag_name"`
+	TagName string   `json:"tag_name"`
 	Assets  glAssets `json:"assets"`
 }
 
