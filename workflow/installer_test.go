@@ -40,7 +40,7 @@ func TestTmpInstaller_Download(t *testing.T) {
 				url:  "www.url.com/binary.tar.gz",
 				path: "tmp/file.tar.gz",
 			},
-			wantErr: func(t assert.TestingT, err error, i ...interface{}) bool {
+			wantErr: func(t assert.TestingT, err error, _ ...interface{}) bool {
 				return assert.Equal(t, dummyErr, err)
 			},
 		},
@@ -53,7 +53,7 @@ func TestTmpInstaller_Download(t *testing.T) {
 				url:  "www.url.com/binary.tar.gz",
 				path: "tmp/file.tar.gz",
 			},
-			wantErr: func(t assert.TestingT, err error, i ...interface{}) bool {
+			wantErr: func(t assert.TestingT, err error, _ ...interface{}) bool {
 				return assert.Nil(t, err)
 			},
 		},

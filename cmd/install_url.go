@@ -36,7 +36,7 @@ Examples:
     --vmid rWhpmtaWqaYAPFMUa4gJSXrGATiuGQVje51kkAFag1sQqK3Kn \
     --sha256 abc123...`,
 		Args: cobra.ExactArgs(1),
-		RunE: func(cmd *cobra.Command, args []string) error {
+		RunE: func(_ *cobra.Command, args []string) error {
 			if vmid == "" {
 				return fmt.Errorf("--vmid is required for direct URL installs")
 			}

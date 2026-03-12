@@ -40,7 +40,7 @@ Examples:
   # Custom build script and binary path
   lpm install-source myorg/myvm --script "make build" --binary "build/myvm"`,
 		Args: cobra.ExactArgs(1),
-		RunE: func(cmd *cobra.Command, args []string) error {
+		RunE: func(_ *cobra.Command, args []string) error {
 			repo := args[0]
 			parts := strings.SplitN(repo, "/", 2)
 			if len(parts) != 2 {

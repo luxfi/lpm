@@ -98,8 +98,10 @@ func (s *InstallSource) Execute() error {
 	if err := cmd.Run(); err != nil {
 		// Try without --branch (maybe ref is a commit)
 		fmt.Printf("Trying clone without branch specification...\n")
-		os.RemoveAll(tmpDir)
-		os.MkdirAll(tmpDir, 0o755)
+		os.RemoveAll(tmpDir) //nolint:errcheck
+		if err := os.MkdirAll(tmpDir, 0o755); err != nil {
+			return fmt.Errorf("failed to create temp directory: %w", err)
+		}
 		cmd = exec.Command("git", "clone", "--depth", "1", cloneURL, tmpDir)
 		cmd.Stdout = os.Stdout
 		cmd.Stderr = os.Stderr

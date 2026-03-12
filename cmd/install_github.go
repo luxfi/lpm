@@ -42,7 +42,7 @@ Examples:
   # Custom binary name pattern
   lpm install-github myorg/myvm --pattern "myvm-plugin-{os}-{arch}"`,
 		Args: cobra.ExactArgs(1),
-		RunE: func(cmd *cobra.Command, args []string) error {
+		RunE: func(_ *cobra.Command, args []string) error {
 			repo := args[0]
 			parts := strings.SplitN(repo, "/", 2)
 			if len(parts) != 2 {

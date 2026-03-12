@@ -77,7 +77,7 @@ func TestInstallExecute(t *testing.T) {
 				mocks.repository.EXPECT().GetVM("plugin").Return(definition, nil)
 				mocks.installer.EXPECT().Download(vm.URL, tarPath).Return(errWrong)
 			},
-			wantErr: func(t assert.TestingT, err error, i ...interface{}) bool {
+			wantErr: func(t assert.TestingT, err error, _ ...interface{}) bool {
 				return assert.Equal(t, err, errWrong)
 			},
 		},
@@ -90,7 +90,7 @@ func TestInstallExecute(t *testing.T) {
 				})
 				mocks.checksummer.EXPECT().Checksum(tarPath).Return([]byte("wrong checksum"))
 			},
-			wantErr: func(t assert.TestingT, err error, i ...interface{}) bool {
+			wantErr: func(t assert.TestingT, err error, _ ...interface{}) bool {
 				return assert.Error(t, err)
 			},
 		},
@@ -104,7 +104,7 @@ func TestInstallExecute(t *testing.T) {
 				mocks.checksummer.EXPECT().Checksum(tarPath).Return(hash)
 				mocks.installer.EXPECT().Decompress(tarPath, workingDir).Return(errWrong)
 			},
-			wantErr: func(t assert.TestingT, err error, i ...interface{}) bool {
+			wantErr: func(t assert.TestingT, err error, _ ...interface{}) bool {
 				return assert.Equal(t, err, errWrong)
 			},
 		},
@@ -121,7 +121,7 @@ func TestInstallExecute(t *testing.T) {
 				})
 				mocks.installer.EXPECT().Install(workingDir, vm.InstallScript).Return(errWrong)
 			},
-			wantErr: func(t assert.TestingT, err error, i ...interface{}) bool {
+			wantErr: func(t assert.TestingT, err error, _ ...interface{}) bool {
 				return assert.Equal(t, err, errWrong)
 			},
 		},
@@ -139,7 +139,7 @@ func TestInstallExecute(t *testing.T) {
 				})
 				mocks.installer.EXPECT().Install(workingDir, vm.InstallScript).Return(nil)
 			},
-			wantErr: func(t assert.TestingT, err error, i ...interface{}) bool {
+			wantErr: func(t assert.TestingT, err error, _ ...interface{}) bool {
 				return assert.Nil(t, err)
 			},
 		},
@@ -155,7 +155,7 @@ func TestInstallExecute(t *testing.T) {
 					return afero.WriteFile(mocks.fs, filepath.Join(workingDir, noInstallScriptVM.BinaryPath), nil, perms.ReadWrite)
 				})
 			},
-			wantErr: func(t assert.TestingT, err error, i ...interface{}) bool {
+			wantErr: func(t assert.TestingT, err error, _ ...interface{}) bool {
 				return assert.Nil(t, err)
 			},
 		},

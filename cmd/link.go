@@ -36,7 +36,7 @@ Examples:
   lpm link luxfi/evm ~/work/lux/evm/build/evm --version v1.2.3-dev
   lpm link myuser/myvm /path/to/myvm/build/myvm`,
 		Args: cobra.ExactArgs(2),
-		RunE: func(cmd *cobra.Command, args []string) error {
+		RunE: func(_ *cobra.Command, args []string) error {
 			pkgRef := args[0]
 			binaryPath := args[1]
 

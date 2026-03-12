@@ -21,7 +21,6 @@ import (
 )
 
 var (
-	goPath  = os.ExpandEnv("$GOPATH")
 	homeDir = os.ExpandEnv("$HOME")
 	lpmDir  = filepath.Join(homeDir, fmt.Sprintf(".%s", constant.AppName))
 )
@@ -38,7 +37,7 @@ func New(fs afero.Fs) (*cobra.Command, error) {
 	rootCmd := &cobra.Command{
 		Use:   "lpm",
 		Short: "lpm is a plugin manager to help manage virtual machines and chains",
-		PersistentPreRunE: func(cmd *cobra.Command, args []string) error {
+		PersistentPreRunE: func(_ *cobra.Command, _ []string) error {
 			// we need to initialize our config here before each command starts,
 			// since Cobra doesn't actually parse any of the flags until
 			// cobra.Execute() is called.
