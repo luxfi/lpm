@@ -7,7 +7,7 @@ on:
     tags:
       - v*
     branches:
-      - master
+      - main
   pull_request:
 permissions:
   contents: read
@@ -26,3 +26,4 @@ jobs:
         uses: golangci/golangci-lint-action@v6
         with:
           version: 'latest'
+          install-mode: goinstall
