@@ -79,7 +79,7 @@ func TestUpdateExecute(t *testing.T) {
 				mocks.stateFile.Sources[alias] = updated
 				mocks.git.EXPECT().GetRepository(url, repoInstallPath, branch, &mocks.auth).Return("", errWrong)
 			},
-			wantErr: func(t assert.TestingT, err error, i ...interface{}) bool {
+			wantErr: func(t assert.TestingT, err error, _ ...interface{}) bool {
 				return assert.Equal(t, errWrong, err)
 			},
 		},
@@ -90,7 +90,7 @@ func TestUpdateExecute(t *testing.T) {
 				mocks.stateFile.Sources[alias] = updated
 				mocks.git.EXPECT().GetRepository(url, repoInstallPath, branch, &mocks.auth).Return(previousCommit, nil)
 			},
-			wantErr: func(t assert.TestingT, err error, i ...interface{}) bool {
+			wantErr: func(t assert.TestingT, err error, _ ...interface{}) bool {
 				return assert.NoError(t, err)
 			},
 		},
@@ -100,7 +100,7 @@ func TestUpdateExecute(t *testing.T) {
 				mocks.stateFile.Sources[alias] = outdated
 				mocks.git.EXPECT().GetRepository(url, repoInstallPath, branch, &mocks.auth).Return(latestCommit, nil)
 			},
-			wantErr: func(t assert.TestingT, err error, i ...interface{}) bool {
+			wantErr: func(t assert.TestingT, err error, _ ...interface{}) bool {
 				return assert.Equal(t, nil, err)
 			},
 		},

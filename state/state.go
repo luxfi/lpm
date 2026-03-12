@@ -28,10 +28,7 @@ func New(path string) (File, error) {
 	result := newEmpty(path)
 
 	b, err := os.ReadFile(result.path)
-	if errors.Is(err, os.ErrNotExist) {
-		// The statefile doesn't exist, so we should swallow this error
-		// and create it when we call Commit()
-	} else if err != nil {
+	if err != nil && !errors.Is(err, os.ErrNotExist) {
 		return File{}, err
 	}
 

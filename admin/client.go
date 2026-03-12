@@ -32,7 +32,7 @@ func (c *client) LoadVMs() error {
 	return err
 }
 
-func (c *client) WhitelistChain(chainID string) error {
+func (c *client) WhitelistChain(_ string) error {
 	// id, err := ids.FromString(chainID)
 	// if err != nil {
 	// 	return err

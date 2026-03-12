@@ -25,15 +25,15 @@ func TestAddRepositoryExecute(t *testing.T) {
 			setup: func(mocks mocks) {
 				mocks.sourcesList["alias"] = nil
 			},
-			wantErr: func(t assert.TestingT, err error, i ...interface{}) bool {
+			wantErr: func(t assert.TestingT, err error, _ ...interface{}) bool {
 				return assert.Error(t, err)
 			},
 		},
 		{
 			name: "success",
-			setup: func(mocks mocks) {
+			setup: func(_ mocks) {
 			},
-			wantErr: func(t assert.TestingT, err error, i ...interface{}) bool {
+			wantErr: func(t assert.TestingT, err error, _ ...interface{}) bool {
 				return assert.Nil(t, err)
 			},
 		},
