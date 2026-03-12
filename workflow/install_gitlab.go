@@ -243,7 +243,7 @@ func (g *InstallGitLab) buildPatterns() []string {
 		archNames = append(archNames, "aarch64")
 	}
 
-	var patterns []string
+	patterns := make([]string, 0, len(archNames)*3)
 	for _, a := range archNames {
 		patterns = append(patterns,
 			fmt.Sprintf("%s-%s", os, a),

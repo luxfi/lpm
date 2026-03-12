@@ -201,7 +201,7 @@ func (g *InstallGitHub) buildPatterns() []string {
 		archNames = append(archNames, "aarch64")
 	}
 
-	var patterns []string
+	patterns := make([]string, 0, len(archNames)*3)
 	for _, a := range archNames {
 		// e.g., "evm-plugin-linux-amd64", "myvm-linux-x86_64"
 		patterns = append(patterns,
