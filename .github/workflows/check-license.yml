@@ -7,22 +7,20 @@ on:
     tags:
       - v*
     branches:
-      - master
+      - main
   pull_request:
 permissions:
   contents: read
-  # Optional: allow read access to pull request. Use with `only-new-issues` option.
-  # pull-requests: read
 jobs:
   check-license:
     name: check-license
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/setup-go@v3
+      - uses: actions/setup-go@v5
         with:
-          go-version: "1.25.5"
-      - uses: actions/checkout@v3
+          go-version: "1.26"
+      - uses: actions/checkout@v4
       - name: Install license check
         run: go install github.com/google/addlicense@v1.0.0
       - name: Check license
-        run: addlicense -f ./LICENSE.header -check -v .
+        run: addlicense -f ./LICENSE.header -check -v -ignore "docs/**" -ignore "**/*.json" -ignore "**/*.md" .
