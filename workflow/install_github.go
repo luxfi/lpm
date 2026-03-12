@@ -218,8 +218,8 @@ func (g *InstallGitHub) buildPatterns() []string {
 func resolveVMID(owner, repo string) (string, error) {
 	// Well-known VMs
 	knownVMs := map[string]string{
-		"luxfi/evm":       "mgj786NP7uDwBCcq6YwThhaN8FLyybkCa4zBWTQbNgmK6k9A6",
-		"luxfi/coreth":    "mgj786NP7uDwBCcq6YwThhaN8FLyybkCa4zBWTQbNgmK6k9A6",
+		"luxfi/evm":        "mgj786NP7uDwBCcq6YwThhaN8FLyybkCa4zBWTQbNgmK6k9A6",
+		"luxfi/coreth":     "mgj786NP7uDwBCcq6YwThhaN8FLyybkCa4zBWTQbNgmK6k9A6",
 		"luxfi/subnet-evm": "srEXiWaHuhNyGwPUi444Tu47ZEDwxTWrbQiuD7FmgSAQ6X7Dy",
 	}
 
