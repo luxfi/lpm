@@ -1,6 +1,8 @@
 # Copyright (C) 2019-2025, Lux Partners Limited. All rights reserved.
 # See the file LICENSE for licensing terms.
 
+version: 2
+
 # ref. https://goreleaser.com/customization/build/
 builds:
   - id: lpm
@@ -8,17 +10,14 @@ builds:
     binary: lpm
     flags:
       - -v
-    # windows is ignored by default, as the `goos` field by default only
-    # contains linux and darwin
-    ignore:
-      - goos: darwin
-        goarch: 386
-      - goos: linux
-        goarch: 386
+    goos:
+      - linux
+      - darwin
+    goarch:
+      - amd64
+      - arm64
 
 release:
-  # Repo in which the release will be created.
-  # Default is extracted from the origin remote URL or empty if its private hosted.
   github:
-    owner: luxdefi
+    owner: luxfi
     name: lpm
