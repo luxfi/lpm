@@ -66,6 +66,9 @@ func New(fs afero.Fs) (*cobra.Command, error) {
 
 	rootCmd.AddCommand(
 		install(fs),
+		installGithub(fs),
+		installURL(fs),
+		installSource(fs),
 		uninstall(fs),
 		update(fs),
 		upgrade(fs),
