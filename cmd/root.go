@@ -26,14 +26,10 @@ var (
 	lpmDir  = filepath.Join(lpmHome, fmt.Sprintf(".%s", constant.AppName))
 )
 
-// lpmHomeDir returns the base home directory for lpm.
-// Respects LPM_HOME env var for white-label deployments
-// (e.g., LPM_HOME=~/.liquid for Liquidity, default ~/.lux for Lux).
+// lpmHomeDir returns ~/.lpm — always. One plugin dir for all nodes.
+// luxd, lqd, mlcd all read from the same ~/.lpm/plugins/.
 func lpmHomeDir() string {
-	if h := os.Getenv("LPM_HOME"); h != "" {
-		return h
-	}
-	return homeDir
+	return filepath.Join(homeDir, ".lpm")
 }
 
 const (
@@ -58,7 +54,7 @@ func New(fs afero.Fs) (*cobra.Command, error) {
 
 	rootCmd.PersistentFlags().String(configFileKey, "", "path to configuration file for the lpm")
 	rootCmd.PersistentFlags().String(lpmPathKey, lpmDir, "path to the directory lpm creates its artifacts")
-	rootCmd.PersistentFlags().String(pluginPathKey, filepath.Join(lpmHome, "plugins"), "path to plugin directory")
+	rootCmd.PersistentFlags().String(pluginPathKey, filepath.Join(homeDir, ".lpm", "plugins"), "path to plugin directory (~/.lpm/plugins)")
 	rootCmd.PersistentFlags().String(credentialsFileKey, "", "path to credentials file")
 	rootCmd.PersistentFlags().String(adminAPIEndpointKey, "127.0.0.1:9650/ext/admin", "endpoint for node admin api")
 
