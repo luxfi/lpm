@@ -1,31 +1,43 @@
-# Copyright (C) 2019-2025, Lux Partners Limited. All rights reserved.
-# See the file LICENSE for licensing terms.
-
-name: Release
+name: Release Lux Plugin Manager
 
 on:
   push:
-    tags:
-      - "*"
+    tags: ['v*']
 
 jobs:
-  release:
-    runs-on: ubuntu-latest
+  build:
+    strategy:
+      matrix:
+        arch: [amd64, arm64]
+    runs-on: ${{ matrix.arch == 'arm64' && 'lux-arm64' || 'lux-amd64' }}
+    env:
+      GONOSUMCHECK: '*'
+      GONOSUMDB: '*'
+      GOPRIVATE: 'github.com/luxfi/*,github.com/liquidityio/*'
+      GOPROXY: direct
     steps:
-      - name: Git checkout
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
         with:
-          fetch-depth: 0
-      - name: Set up Go
-        uses: actions/setup-go@v5
+          go-version: '1.26'
+      - name: Build
+        run: CGO_ENABLED=0 go build -trimpath -ldflags="-s -w" -o lpm .
+      - name: Upload
+        uses: actions/upload-artifact@v4
         with:
-          go-version: "1.26"
-      - name: Run GoReleaser
-        uses: goreleaser/goreleaser-action@v6
+          name: lpm-linux-${{ matrix.arch }}
+          path: lpm
+
+  release:
+    needs: build
+    runs-on: lux-amd64
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/download-artifact@v4
         with:
-          distribution: goreleaser
-          version: latest
-          args: release --clean
-        env:
-          #https://docs.github.com/en/actions/security-guides/automatic-token-authentication#about-the-github_token-secret
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          path: dist/
+      - name: Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: dist/**/*
