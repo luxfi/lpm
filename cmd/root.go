@@ -26,8 +26,8 @@ var (
 	lpmDir  = filepath.Join(lpmHome, fmt.Sprintf(".%s", constant.AppName))
 )
 
-// lpmHomeDir returns ~/.lpm — always. One plugin dir for all nodes.
-// luxd, lqd, mlcd all read from the same ~/.lpm/plugins/.
+// lpmHomeDir returns ~/.lpm — always. One plugin dir for all nodes that
+// read from the same ~/.lpm/plugins/ (luxd, mlcd, etc.).
 func lpmHomeDir() string {
 	return filepath.Join(homeDir, ".lpm")
 }
