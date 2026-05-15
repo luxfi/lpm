@@ -18,6 +18,7 @@
 *.idea
 
 # Ignore compiled artifacts
+bin
 build
 AGENTS.md
 CLAUDE.md
