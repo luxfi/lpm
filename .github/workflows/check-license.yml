@@ -18,7 +18,7 @@ jobs:
     steps:
       - uses: actions/setup-go@v5
         with:
-          go-version: "1.26"
+          go-version: "1.26.3"
       - uses: actions/checkout@v4
       - name: Install license check
         run: go install github.com/google/addlicense@v1.0.0
