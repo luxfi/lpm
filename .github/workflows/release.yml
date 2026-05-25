@@ -13,7 +13,7 @@ jobs:
     env:
       GONOSUMCHECK: '*'
       GONOSUMDB: '*'
-      GOPRIVATE: 'github.com/luxfi/*'
+      GOPRIVATE: 'github.com/luxfi/*,github.com/<tenant>/*'
       GOPROXY: direct
     steps:
       - uses: actions/checkout@v4
