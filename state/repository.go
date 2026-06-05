@@ -22,9 +22,12 @@ var (
 
 	// Wrapper keys used by on-disk plugin manifests. By convention every
 	// definition file is a single-key mapping (`vm:` for VMs, `subnet:` for
-	// chains/subnets) whose value is the actual definition. The keys match
-	// the wrappers in plugins-core/examples/{vm,subnet}.yaml and every
-	// shipped registry entry.
+	// chains) whose value is the actual definition. The keys match the
+	// wrappers in plugins-core/examples/{vm,subnet}.yaml and every shipped
+	// registry entry. The chain wrapper key remains `subnet` on disk for
+	// backwards compatibility with shipped manifests (was upstream Lux v0.x
+	// terminology); renaming it would break every registry entry already
+	// published.
 	vmWrapperKey    = "vm"
 	chainWrapperKey = "subnet"
 )
