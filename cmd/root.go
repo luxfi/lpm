@@ -4,12 +4,12 @@
 package cmd
 
 import (
+	"errors"
 	"fmt"
 	"os"
 	"path/filepath"
 
 	"github.com/go-git/go-git/v5/plumbing/transport/http"
-	"github.com/luxfi/codec/wrappers"
 	"github.com/spf13/afero"
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
@@ -58,16 +58,15 @@ func New(fs afero.Fs) (*cobra.Command, error) {
 	rootCmd.PersistentFlags().String(credentialsFileKey, "", "path to credentials file")
 	rootCmd.PersistentFlags().String(adminAPIEndpointKey, "127.0.0.1:9650/ext/admin", "endpoint for node admin api")
 
-	errs := wrappers.Errs{}
-	errs.Add(
+	err := errors.Join(
 		viper.BindPFlag(configFileKey, rootCmd.PersistentFlags().Lookup(configFileKey)),
 		viper.BindPFlag(lpmPathKey, rootCmd.PersistentFlags().Lookup(lpmPathKey)),
 		viper.BindPFlag(pluginPathKey, rootCmd.PersistentFlags().Lookup(pluginPathKey)),
 		viper.BindPFlag(credentialsFileKey, rootCmd.PersistentFlags().Lookup(credentialsFileKey)),
 		viper.BindPFlag(adminAPIEndpointKey, rootCmd.PersistentFlags().Lookup(adminAPIEndpointKey)),
 	)
-	if errs.Errored() {
-		return nil, errs.Err
+	if err != nil {
+		return nil, err
 	}
 
 	rootCmd.AddCommand(

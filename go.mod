@@ -7,7 +7,6 @@ require (
 	github.com/go-git/go-git/v5 v5.17.2
 	github.com/golang/mock v1.7.0-rc.1
 	github.com/juju/fslock v0.0.0-20160525022230-4d5c94c67b4b
-	github.com/luxfi/codec v1.1.4
 	github.com/luxfi/filesystem v0.0.1
 	github.com/luxfi/ids v1.2.9
 	github.com/luxfi/sdk v1.16.48
