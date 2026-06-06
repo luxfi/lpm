@@ -8,8 +8,8 @@ require (
 	github.com/golang/mock v1.7.0-rc.1
 	github.com/juju/fslock v0.0.0-20160525022230-4d5c94c67b4b
 	github.com/luxfi/filesystem v0.0.1
-	github.com/luxfi/ids v1.2.9
-	github.com/luxfi/sdk v1.16.48
+	github.com/luxfi/ids v1.2.10
+	github.com/luxfi/sdk v1.17.6
 	github.com/spf13/afero v1.15.0
 	github.com/spf13/cobra v1.10.2
 	github.com/spf13/viper v1.21.0
@@ -36,8 +36,9 @@ require (
 	github.com/jbenet/go-context v0.0.0-20150711004518-d14ea06fba99 // indirect
 	github.com/kevinburke/ssh_config v1.6.0 // indirect
 	github.com/klauspost/cpuid/v2 v2.3.0 // indirect
-	github.com/luxfi/api v1.0.4 // indirect
-	github.com/luxfi/crypto v1.19.0 // indirect
+	github.com/luxfi/api v1.0.12 // indirect
+	github.com/luxfi/codec v1.1.5 // indirect
+	github.com/luxfi/crypto v1.19.17 // indirect
 	github.com/luxfi/formatting v1.0.1 // indirect
 	github.com/luxfi/mock v0.1.1 // indirect
 	github.com/luxfi/rpc v1.0.2 // indirect
@@ -55,12 +56,12 @@ require (
 	github.com/xanzy/ssh-agent v0.3.3 // indirect
 	go.uber.org/mock v0.6.0 // indirect
 	go.yaml.in/yaml/v3 v3.0.4 // indirect
-	golang.org/x/crypto v0.49.0 // indirect
-	golang.org/x/net v0.52.0 // indirect
-	golang.org/x/sys v0.42.0 // indirect
-	golang.org/x/text v0.35.0 // indirect
+	golang.org/x/crypto v0.52.0 // indirect
+	golang.org/x/net v0.55.0 // indirect
+	golang.org/x/sys v0.45.0 // indirect
+	golang.org/x/text v0.37.0 // indirect
 	google.golang.org/genproto/googleapis/rpc v0.0.0-20260401024825-9d38bb4040a9 // indirect
-	google.golang.org/grpc v1.80.0 // indirect
+	google.golang.org/grpc v1.81.1 // indirect
 	google.golang.org/protobuf v1.36.11 // indirect
 	gopkg.in/warnings.v0 v0.1.2 // indirect
 )
