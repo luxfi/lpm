@@ -9,7 +9,7 @@ jobs:
     strategy:
       matrix:
         arch: [amd64, arm64]
-    runs-on: ${{ matrix.arch == 'arm64' && 'lux-arm64' || 'lux-amd64' }}
+    runs-on: ${{ matrix.arch == 'arm64' && 'spark' || 'evo' }}
     env:
       GONOSUMCHECK: '*'
       GONOSUMDB: '*'
@@ -30,7 +30,7 @@ jobs:
 
   release:
     needs: build
-    runs-on: lux-amd64
+    runs-on: evo
     permissions:
       contents: write
     steps:
