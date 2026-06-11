@@ -8,8 +8,12 @@ jobs:
   build:
     strategy:
       matrix:
-        arch: [amd64, arm64]
-    runs-on: ${{ matrix.arch == 'arm64' && 'spark' || 'evo' }}
+        include:
+          - arch: amd64
+            runner: [self-hosted, linux, amd64]
+          - arch: arm64
+            runner: [self-hosted, linux, arm64]
+    runs-on: ${{ matrix.runner }}
     env:
       GONOSUMCHECK: '*'
       GONOSUMDB: '*'
@@ -30,7 +34,7 @@ jobs:
 
   release:
     needs: build
-    runs-on: evo
+    runs-on: [self-hosted, linux, amd64]
     permissions:
       contents: write
     steps:
