@@ -1,3 +1,5 @@
+<p align="center"><img src=".github/hero.svg" alt="lpm" width="880"></p>
+
 # Lux Plugin Manager (LPM)
 
 **Note: This code is currently in Alpha. Proceed at your own risk.**
