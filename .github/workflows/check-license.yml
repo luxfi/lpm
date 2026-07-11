@@ -14,7 +14,7 @@ permissions:
 jobs:
   check-license:
     name: check-license
-    runs-on: ubuntu-latest
+    runs-on: lux-build-amd64
     steps:
       - uses: actions/setup-go@v5
         with:
