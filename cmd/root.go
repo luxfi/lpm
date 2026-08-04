@@ -56,7 +56,7 @@ func New(fs afero.Fs) (*cobra.Command, error) {
 	rootCmd.PersistentFlags().String(lpmPathKey, lpmDir, "path to the directory lpm creates its artifacts")
 	rootCmd.PersistentFlags().String(pluginPathKey, filepath.Join(homeDir, ".lpm", "plugins"), "path to plugin directory (~/.lpm/plugins)")
 	rootCmd.PersistentFlags().String(credentialsFileKey, "", "path to credentials file")
-	rootCmd.PersistentFlags().String(adminAPIEndpointKey, "127.0.0.1:9650/ext/admin", "endpoint for node admin api")
+	rootCmd.PersistentFlags().String(adminAPIEndpointKey, "127.0.0.1:9650/v1/admin", "endpoint for node admin api")
 
 	err := errors.Join(
 		viper.BindPFlag(configFileKey, rootCmd.PersistentFlags().Lookup(configFileKey)),
