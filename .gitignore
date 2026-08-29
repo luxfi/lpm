@@ -24,3 +24,7 @@ AGENTS.md
 CLAUDE.md
 GEMINI.md
 QWEN.md
+
+# Generated. Built and published by CI, never committed.
+docs/out/
+docs/.next/
