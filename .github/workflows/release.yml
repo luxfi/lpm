@@ -12,7 +12,7 @@ jobs:
           - arch: amd64
             runner: [linux-amd64]
           - arch: arm64
-            runner: [self-hosted, linux, arm64]
+            runner: [linux-arm64]
     runs-on: ${{ matrix.runner }}
     env:
       GONOSUMCHECK: '*'
