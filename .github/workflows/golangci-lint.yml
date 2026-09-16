@@ -16,7 +16,7 @@ permissions:
 jobs:
   golangci:
     name: lint
-    runs-on: lux-build-amd64
+    runs-on: linux-amd64
     steps:
       - uses: actions/setup-go@v5
         with:

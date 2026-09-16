@@ -10,7 +10,7 @@ jobs:
       matrix:
         include:
           - arch: amd64
-            runner: [self-hosted, linux, amd64]
+            runner: [self-hosted, linux, linux-amd64]
           - arch: arm64
             runner: [self-hosted, linux, arm64]
     runs-on: ${{ matrix.runner }}
@@ -34,7 +34,7 @@ jobs:
 
   release:
     needs: build
-    runs-on: [self-hosted, linux, amd64]
+    runs-on: [self-hosted, linux, linux-amd64]
     permissions:
       contents: write
     steps:
