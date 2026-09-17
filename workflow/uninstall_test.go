@@ -46,7 +46,7 @@ func TestUninstallExecute(t *testing.T) {
 			name: "vm already uninstalled",
 			setup: func(_ mocks) {
 			},
-			wantErr: func(t assert.TestingT, err error, _ ...interface{}) bool {
+			wantErr: func(t assert.TestingT, err error, _ ...any) bool {
 				return assert.Nil(t, err)
 			},
 		},
@@ -58,7 +58,7 @@ func TestUninstallExecute(t *testing.T) {
 					Commit: definition.Commit,
 				}
 			},
-			wantErr: func(t assert.TestingT, err error, _ ...interface{}) bool {
+			wantErr: func(t assert.TestingT, err error, _ ...any) bool {
 				return assert.Nil(t, err)
 			},
 		},

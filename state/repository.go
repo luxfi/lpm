@@ -45,18 +45,18 @@ type DiskRepository struct {
 }
 
 func (d DiskRepository) GetVM(name string) (Definition[types.VM], error) {
-	return get[types.VM](d, vmDir, name, vmWrapperKey)
+	return d.get[types.VM](vmDir, name, vmWrapperKey)
 }
 
 func (d DiskRepository) GetChain(name string) (Definition[types.Chain], error) {
-	return get[types.Chain](d, chainDir, name, chainWrapperKey)
+	return d.get[types.Chain](chainDir, name, chainWrapperKey)
 }
 
 func (d DiskRepository) GetPath() string {
 	return d.Path
 }
 
-func get[T types.Definition](d DiskRepository, dir string, file string, wrapperKey string) (Definition[T], error) {
+func (d DiskRepository) get[T types.Definition](dir string, file string, wrapperKey string) (Definition[T], error) {
 	relativePathWithExtension := filepath.Join(dir, fmt.Sprintf("%s.%s", file, extension))
 	absolutePathWithExtension := filepath.Join(d.Path, relativePathWithExtension)
 	bytes, err := os.ReadFile(absolutePathWithExtension)
